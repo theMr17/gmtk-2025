@@ -25,9 +25,6 @@ public class DialogueManager : MonoBehaviour
   private Queue<DialogueLine> dialogueQueue;
   private DialogueLine currentLine;
   private bool isDialogueActive = false;
-  private DialogueSo currentDialogue;
-  private int totalLines;
-  private int currentLineIndex;
 
   private void Awake()
   {
@@ -43,6 +40,16 @@ public class DialogueManager : MonoBehaviour
     }
   }
 
+  private void Start()
+  {
+    GameManager.Instance.OnDialogueTriggered += GameManager_OnDialogueTriggered;
+  }
+
+  private void GameManager_OnDialogueTriggered(object sender, GameManager.DialogueTriggeredEventArgs e)
+  {
+    StartDialogue(e.dialogue);
+  }
+
   public void StartDialogue(DialogueSo dialogue)
   {
     if (dialogue == null || dialogue.lines == null || dialogue.lines.Count == 0)
@@ -55,10 +62,10 @@ public class DialogueManager : MonoBehaviour
 
     foreach (DialogueLine line in dialogue.lines) dialogueQueue.Enqueue(line);
 
-    ShowNextLine();
+    ShowNextLine(isDialogueStart: true);
   }
 
-  public void ShowNextLine()
+  public void ShowNextLine(bool isDialogueStart = false)
   {
     if (dialogueQueue.Count == 0)
     {
@@ -79,7 +86,7 @@ public class DialogueManager : MonoBehaviour
     };
 
     // Trigger event accordingly 
-    if (currentLineIndex == 0)
+    if (isDialogueStart)
     {
       OnDialogueStart?.Invoke(this, eventArgs);
     }
@@ -97,8 +104,6 @@ public class DialogueManager : MonoBehaviour
       }
       OnChoicesAdded?.Invoke(this, new ChoicesEventArgs { choices = choiceTexts });
     }
-
-    currentLineIndex++;
   }
 
   public void ChooseOption(int choiceIndex)
@@ -117,8 +122,6 @@ public class DialogueManager : MonoBehaviour
   {
     isDialogueActive = false;
     currentLine = null;
-    currentDialogue = null;
-    currentLineIndex = 0;
     OnDialogueEnd?.Invoke(this, EventArgs.Empty);
   }
 

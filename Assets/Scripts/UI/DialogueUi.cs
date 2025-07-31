@@ -13,12 +13,12 @@ public class DialogueUi : MonoBehaviour
 
   private void Start()
   {
-    Hide();
-
     DialogueManager.Instance.OnDialogueStart += DialogueManager_OnDialogueStart;
     DialogueManager.Instance.OnDialogueChange += DialogueManager_OnDialogueChange;
     DialogueManager.Instance.OnDialogueEnd += DialogueManager_OnDialogueEnd;
     DialogueManager.Instance.OnChoicesAdded += DialogueManager_OnChoicesAdded;
+
+    Hide();
   }
 
   private void DialogueManager_OnDialogueStart(object sender, DialogueManager.DialogueEventArgs e)

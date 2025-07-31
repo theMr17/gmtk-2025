@@ -21,3 +21,6 @@ MonoBehaviour:
     choices:
     - choiceText: Choice 1
     - choiceText: Choice 2
+  - character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    message: Test message 3
+    choices: []
