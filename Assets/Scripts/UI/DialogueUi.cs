@@ -16,7 +16,7 @@ public class DialogueUi : MonoBehaviour
     DialogueManager.Instance.OnDialogueStart += DialogueManager_OnDialogueStart;
     DialogueManager.Instance.OnDialogueChange += DialogueManager_OnDialogueChange;
     DialogueManager.Instance.OnDialogueEnd += DialogueManager_OnDialogueEnd;
-    DialogueManager.Instance.OnChoicesAdded += DialogueManager_OnChoicesAdded;
+    DialogueManager.Instance.OnOptionsAdded += DialogueManager_OnOptionsAdded;
 
     Hide();
   }
@@ -39,12 +39,12 @@ public class DialogueUi : MonoBehaviour
     Hide();
   }
 
-  private void DialogueManager_OnChoicesAdded(object sender, DialogueManager.ChoicesEventArgs e)
+  private void DialogueManager_OnOptionsAdded(object sender, DialogueManager.OptionsEventArgs e)
   {
-    ShowChoices(e.choices);
+    ShowChoices(e.options);
   }
 
-  private void ShowChoices(string[] choices)
+  private void ShowChoices(string[] options)
   {
     // Clear existing choices
     foreach (Transform child in _choicesContainer)
@@ -56,17 +56,17 @@ public class DialogueUi : MonoBehaviour
     _choicesContainer.gameObject.SetActive(true);
 
     // Instantiate choice buttons with proper index tracking 
-    for (int i = 0; i < choices.Length; i++)
+    for (int i = 0; i < options.Length; i++)
     {
-      string choiceText = choices[i];
-      int choiceIndex = i;
-      Button choiceButton = Instantiate(_choiceButtonPrefab, _choicesContainer);
-      choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choiceText;
+      string optionText = options[i];
+      int optionIndex = i;
+      Button optionButton = Instantiate(_choiceButtonPrefab, _choicesContainer);
+      optionButton.GetComponentInChildren<TextMeshProUGUI>().text = optionText;
 
-      // Choice selection
-      choiceButton.onClick.AddListener(() =>
+      // Option selection
+      optionButton.onClick.AddListener(() =>
       {
-        DialogueManager.Instance.ChooseOption(choiceIndex);
+        DialogueManager.Instance.ChooseOption(optionIndex);
       });
     }
   }
@@ -105,6 +105,6 @@ public class DialogueUi : MonoBehaviour
     DialogueManager.Instance.OnDialogueStart -= DialogueManager_OnDialogueStart;
     DialogueManager.Instance.OnDialogueChange -= DialogueManager_OnDialogueChange;
     DialogueManager.Instance.OnDialogueEnd -= DialogueManager_OnDialogueEnd;
-    DialogueManager.Instance.OnChoicesAdded -= DialogueManager_OnChoicesAdded;
+    DialogueManager.Instance.OnOptionsAdded -= DialogueManager_OnOptionsAdded;
   }
 }

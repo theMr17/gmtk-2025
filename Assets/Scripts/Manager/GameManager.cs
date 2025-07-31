@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
   public event EventHandler<DialogueTriggeredEventArgs> OnDialogueTriggered;
   public class DialogueTriggeredEventArgs : EventArgs
   {
-    public DialogueSo dialogue;
+    public DialogueNodeSo dialogueNode;
   }
 
-  [SerializeField] private DialogueSo introDialogue;
+  [SerializeField] private DialogueNodeSo startDialogueNode;
 
   private void Awake()
   {
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.D))
     {
-      OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogue = introDialogue });
+      OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNode });
     }
   }
 }

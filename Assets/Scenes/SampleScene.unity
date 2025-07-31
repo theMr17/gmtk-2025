@@ -717,6 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809151805}
   - component: {fileID: 809151804}
+  - component: {fileID: 809151806}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -736,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f56237afc0bde34896481a4b6b29fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introDialogue: {fileID: 11400000, guid: 907ee87136b3ae34d8773f75b68d0684, type: 2}
+  startDialogueNode: {fileID: 11400000, guid: cda534dba73d35340bad7cebf2e32fdb, type: 2}
 --- !u!4 &809151805
 Transform:
   m_ObjectHideFlags: 0
@@ -752,6 +753,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809151806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809151803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3accc31699df9488e70c978fb6a290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Day: 1
+  FreeRoam: 0
+  CalViewed: 0
 --- !u!1 &1049982863
 GameObject:
   m_ObjectHideFlags: 0
