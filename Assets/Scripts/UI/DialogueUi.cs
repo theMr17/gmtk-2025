@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 
 public class DialogueUi : MonoBehaviour
 {
@@ -26,11 +25,13 @@ public class DialogueUi : MonoBehaviour
   {
     Show();
     UpdateDialogue(e.characterName, e.characterBust, e.dialogue);
+    HideChoices();
   }
 
   private void DialogueManager_OnDialogueChange(object sender, DialogueManager.DialogueEventArgs e)
   {
     UpdateDialogue(e.characterName, e.characterBust, e.dialogue);
+    HideChoices();
   }
 
   private void DialogueManager_OnDialogueEnd(object sender, System.EventArgs e)
@@ -40,23 +41,45 @@ public class DialogueUi : MonoBehaviour
 
   private void DialogueManager_OnChoicesAdded(object sender, DialogueManager.ChoicesEventArgs e)
   {
+    ShowChoices(e.choices);
+  }
+
+  private void ShowChoices(string[] choices)
+  {
     // Clear existing choices
     foreach (Transform child in _choicesContainer)
     {
       Destroy(child.gameObject);
     }
 
-    // Instantiate choice buttons based on the provided choice text
-    foreach (var choice in e.choices)
+    // Show choices container
+    _choicesContainer.gameObject.SetActive(true);
+
+    // Instantiate choice buttons with proper index tracking 
+    for (int i = 0; i < choices.Length; i++)
     {
+      string choiceText = choices[i];
+      int choiceIndex = i;
       Button choiceButton = Instantiate(_choiceButtonPrefab, _choicesContainer);
-      choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choice;
+      choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choiceText;
+
+      // Choice selection
       choiceButton.onClick.AddListener(() =>
       {
-        // DialogueManager.Instance.ChooseOption(choice);
-        Hide();
+        DialogueManager.Instance.ChooseOption(choiceIndex);
       });
     }
+  }
+
+  private void HideChoices()
+  {
+    // Clear Existing choices
+    foreach (Transform child in _choicesContainer)
+    {
+      Destroy(child.gameObject);
+    }
+
+    _choicesContainer.gameObject.SetActive(false);
   }
 
   private void Show()
@@ -67,6 +90,7 @@ public class DialogueUi : MonoBehaviour
   private void Hide()
   {
     gameObject.SetActive(false);
+    HideChoices();
   }
 
   private void UpdateDialogue(string characterName, Sprite characterBust, string dialogue)
@@ -74,5 +98,13 @@ public class DialogueUi : MonoBehaviour
     _characterNameText.text = characterName;
     _characterBustImage.sprite = characterBust;
     _dialogueText.text = dialogue;
+  }
+
+  private void OnDestroy()
+  {
+    DialogueManager.Instance.OnDialogueStart -= DialogueManager_OnDialogueStart;
+    DialogueManager.Instance.OnDialogueChange -= DialogueManager_OnDialogueChange;
+    DialogueManager.Instance.OnDialogueEnd -= DialogueManager_OnDialogueEnd;
+    DialogueManager.Instance.OnChoicesAdded -= DialogueManager_OnChoicesAdded;
   }
 }
