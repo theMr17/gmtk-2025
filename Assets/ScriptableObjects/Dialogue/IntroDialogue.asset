@@ -16,7 +16,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     message: Test message
     choices: []
-  - character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+  - character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     message: Test message 2
     choices:
     - choiceText: OK1
