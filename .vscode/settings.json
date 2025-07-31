@@ -66,5 +66,9 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
     },
-    "dotnet.defaultSolution": "gmtk-2025.sln"
+    "dotnet.defaultSolution": "gmtk-2025.sln",
+    "editor.formatOnSave": true,
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    }
 }
