@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7c0218e0a793f49b274753458c6f85, type: 3}
   m_Name: Subject004
   m_EditorClassIdentifier: 
-  characterName: Subject004
+  characterName: Subject 004
   characterBust: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
