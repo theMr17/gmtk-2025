@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
   public event EventHandler<DialogueEventArgs> OnDialogueStart;
   public event EventHandler<DialogueEventArgs> OnDialogueChange;
   public event EventHandler OnDialogueEnd;
+
   public class DialogueEventArgs : EventArgs
   {
     public string characterName;
@@ -22,12 +23,12 @@ public class DialogueManager : MonoBehaviour
     public string[] options;
   }
 
-  private Queue<DialogueLine> dialogueQueue;
-  private List<DialogueOption> dialogueOptions = new List<DialogueOption>();
-  private DialogueLine currentLine;
-  private bool isDialogueActive = false;
-
   private DialogueNodeSo _currentNode;
+
+  private Queue<DialogueLine> _dialogueQueue;
+  private List<DialogueOption> _dialogueOptions = new();
+  private bool _isDialogueActive = false;
+  private bool _isShowingOptions = false;
 
   private void Awake()
   {
@@ -35,7 +36,7 @@ public class DialogueManager : MonoBehaviour
     {
       Instance = this;
       DontDestroyOnLoad(gameObject);
-      dialogueQueue = new Queue<DialogueLine>();
+      _dialogueQueue = new Queue<DialogueLine>();
     }
     else
     {
@@ -48,6 +49,14 @@ public class DialogueManager : MonoBehaviour
     GameManager.Instance.OnDialogueTriggered += GameManager_OnDialogueTriggered;
   }
 
+  private void Update()
+  {
+    if (Input.GetMouseButtonDown(0) && _isDialogueActive && !_isShowingOptions)
+    {
+      ShowNextLine();
+    }
+  }
+
   private void GameManager_OnDialogueTriggered(object sender, GameManager.DialogueTriggeredEventArgs e)
   {
     StartDialogueNode(e.dialogueNode);
@@ -57,28 +66,25 @@ public class DialogueManager : MonoBehaviour
   {
     _currentNode = dialogueNode;
 
-    if (_currentNode == null || _currentNode.dialogueLines.Length == 0)
-    {
-      ShowOptions();
-      return;
-    }
-
-    // Check conditions for the current node
-    if (!_currentNode.condition.IsMet(GameManager.Instance.GetComponent<GameState>()))
+    if (_currentNode == null || !_currentNode.showNodeCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
     {
       EndDialogueNode();
       return;
     }
 
-    // Clear previous dialogue
-    dialogueQueue.Clear();
+    if (_currentNode.dialogueLines.Length == 0)
+    {
+      ShowOptions();
+      return;
+    }
 
-    // Add lines to the queue
+    _dialogueQueue.Clear();
+
     foreach (var line in _currentNode.dialogueLines)
     {
       if (line.showLineCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
       {
-        dialogueQueue.Enqueue(line);
+        _dialogueQueue.Enqueue(line);
       }
     }
 
@@ -87,19 +93,19 @@ public class DialogueManager : MonoBehaviour
 
   void ShowNextLine(bool isDialogueStart = false)
   {
-    if (dialogueQueue.Count == 0)
+    if (_dialogueQueue.Count == 0)
     {
       ShowOptions();
       return;
     }
 
-    isDialogueActive = true;
-    currentLine = dialogueQueue.Dequeue();
+    _isDialogueActive = true;
+    DialogueLine currentLine = _dialogueQueue.Dequeue();
 
     string characterName = currentLine.character != null ? currentLine.character.characterName : "Unknown";
     Sprite characterBust = currentLine.character != null ? currentLine.character.characterBust : null;
 
-    if (currentLine.hideCharacterIfConditionMet && currentLine.nameCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
+    if (currentLine.hideCharacterIfConditionMet && currentLine.hideCharacterCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
     {
       characterName = "???";
       characterBust = null;
@@ -129,63 +135,74 @@ public class DialogueManager : MonoBehaviour
       EndDialogueNode();
       return;
     }
-    Debug.Log("Showing options for dialogue node: " + _currentNode.name);
+
+    _isShowingOptions = true;
+    _dialogueOptions.Clear();
 
     for (int i = 0; i < _currentNode.options.Length; i++)
     {
-      if (_currentNode.options[i].condition.IsMet(GameManager.Instance.GetComponent<GameState>()))
+      if (_currentNode.options[i].showOptionCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
       {
-        dialogueOptions.Add(_currentNode.options[i]);
+        _dialogueOptions.Add(_currentNode.options[i]);
       }
     }
 
-    Debug.Log("Available options: " + dialogueOptions.Count);
-
     OnOptionsAdded?.Invoke(this, new OptionsEventArgs
     {
-      options = dialogueOptions.ConvertAll(dialogueOption => dialogueOption.option).ToArray()
+      options = _dialogueOptions.ConvertAll(dialogueOption => dialogueOption.option).ToArray()
     });
   }
 
-  public void ChooseOption(int optionIndex)
+  public void ChooseOption(int selectedOptionIndex)
   {
-    if (_currentNode == null || _currentNode.options == null || optionIndex < 0 || optionIndex >= dialogueOptions.Count)
+    if (_currentNode == null || _currentNode.options == null || selectedOptionIndex < 0 || selectedOptionIndex >= _dialogueOptions.Count)
     {
       EndDialogueNode();
       return;
     }
 
-    DialogueNodeSo nextNode = dialogueOptions[optionIndex].nextNode;
-    EndDialogueNode();
+    DialogueNodeSo nextNode = _dialogueOptions[selectedOptionIndex].nextNode;
 
-    // Check condition for the next node
     if (nextNode != null)
     {
-      StartDialogueNode(nextNode);
+      StartNextDialogueNode(nextNode);
+      return;
     }
+
+    EndDialogueNode();
+  }
+
+  private void StartNextDialogueNode(DialogueNodeSo nextNode)
+  {
+    if (nextNode == null)
+    {
+      EndDialogueNode();
+      return;
+    }
+
+    _isDialogueActive = false;
+    _isShowingOptions = false;
+    _currentNode = null;
+    _dialogueQueue.Clear();
+    _dialogueOptions.Clear();
+
+    StartDialogueNode(nextNode);
   }
 
   private void EndDialogueNode()
   {
-    if (_currentNode.nextNode != null)
+    if (_currentNode != null && _currentNode.nextNode != null)
     {
-      StartDialogueNode(_currentNode.nextNode);
+      StartNextDialogueNode(_currentNode.nextNode);
       return;
     }
 
-    isDialogueActive = false;
+    _isDialogueActive = false;
+    _isShowingOptions = false;
     _currentNode = null;
-    dialogueQueue.Clear();
-    dialogueOptions.Clear();
-    OnDialogueEnd?.Invoke(this, EventArgs.Empty);
-  }
+    _dialogueQueue.Clear();
+    _dialogueOptions.Clear();
 
-  private void Update()
-  {
-    // Allow advance dialogue only if no choices 
-    if (Input.GetMouseButtonDown(0))
-    {
-      ShowNextLine();
-    }
+    OnDialogueEnd?.Invoke(this, EventArgs.Empty);
   }
 }
