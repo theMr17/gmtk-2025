@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 [CreateAssetMenu(menuName = "Sounds SO", fileName = "Sounds SO")]
 public class SoundsSO : ScriptableObject
@@ -10,7 +13,7 @@ public class SoundsSO : ScriptableObject
     public SoundList[] sounds;
 }
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(SoundsSO))]
 public class SoundsSOEditor : Editor
 {
@@ -61,3 +64,4 @@ public class SoundsSOEditor : Editor
         }
     }
 }
+#endif
