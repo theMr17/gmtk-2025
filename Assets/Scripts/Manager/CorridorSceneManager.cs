@@ -1,0 +1,59 @@
+using UnityEngine;
+
+public class CorridorSceneManager : MonoBehaviour
+{
+  public static CorridorSceneManager Instance { get; private set; }
+
+  [SerializeField] private InteractableObject slipObject;
+  [SerializeField] private DialogueNodeSo slipDialogueNodeGuardPresent;
+  [SerializeField] private DialogueNodeSo slipDialogueNodeGuardAbsent;
+
+  [Header("Time Ranges")]
+  [SerializeField] private TimeRange guardTimeRange1 = new TimeRange { StartHour = 8, StartMinute = 0, EndHour = 10, EndMinute = 0 };
+  [SerializeField] private TimeRange guardTimeRange2 = new TimeRange { StartHour = 13, StartMinute = 0, EndHour = 14, EndMinute = 30 };
+  [SerializeField] private TimeRange guardTimeRange3 = new TimeRange { StartHour = 15, StartMinute = 40, EndHour = 19, EndMinute = 0 };
+
+  [SerializeField] private TimeRange slipTimeRange = new TimeRange { StartHour = 6, StartMinute = 0, EndHour = 13, EndMinute = 0 };
+
+  private void Awake()
+  {
+    Instance = this;
+  }
+
+  private void Start()
+  {
+    slipObject.button.onClick.AddListener(() => HandleSlipInteraction());
+  }
+
+  private void HandleSlipInteraction()
+  {
+    if (IsGuardPresent())
+    {
+      GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardPresent);
+    }
+    else
+    {
+      GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardAbsent);
+    }
+  }
+
+  public bool IsGuardPresent()
+  {
+    int hour = DayTimeManager.Instance.Hour;
+    int minute = DayTimeManager.Instance.Minute;
+
+    int labAccident = GameManager.Instance.gameState.LabAccident;
+
+    return (guardTimeRange1.Includes(hour, minute)
+        || guardTimeRange2.Includes(hour, minute)
+        || guardTimeRange3.Includes(hour, minute)) && (labAccident == 0 || labAccident == 2);
+  }
+
+  public bool IsSlipPresent()
+  {
+    int hour = DayTimeManager.Instance.Hour;
+    int minute = DayTimeManager.Instance.Minute;
+
+    return slipTimeRange.Includes(hour, minute);
+  }
+}
