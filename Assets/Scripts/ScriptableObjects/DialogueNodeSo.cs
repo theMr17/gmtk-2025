@@ -23,6 +23,9 @@ public class DialogueLine
   [Tooltip("The text that will be displayed for this dialogue line.")]
   public string text;
 
+  [Tooltip("Variants of the text that can be randomly selected. If empty, 'Text' is used. Note: Text is also used when choosing a random variant.")]
+  public string[] textVariants;
+
   [Tooltip("The character who is speaking this line.")]
   public CharacterSo character;
 

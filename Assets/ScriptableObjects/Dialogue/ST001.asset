@@ -13,94 +13,157 @@ MonoBehaviour:
   m_Name: ST001
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "\u2026"
+  - text: ...
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: "\u2026"
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: "\u2026Where am I?"
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: I open my eyes to see a room. It does not seem familiar.
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: " I don\u2019t remember if I\u2019m supposed to be here. Actually, who\u2026
       am I?\r"
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: "My head\u2026 it\u2019s empty. I don\u2019t even remember a name or a
       past.\r\n"
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: ' Is this amnesia?'
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: "I don\u2019t know why, but\u2026 I really want to get out of here."
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   - text: 'As I sit up, an unknown man enters the room.
 
 '
+    textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
-    nameCondition:
-      minDay: 0
-      maxDay: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
+      requiredCalViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
   options: []
   nextNode: {fileID: 11400000, guid: a016d168fc77b6a4db1f4a826e2c4229, type: 2}
-  condition:
+  showNodeCondition:
     minDay: -1
     maxDay: -1
     requiresFreeRoam: 0

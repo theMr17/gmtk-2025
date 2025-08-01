@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f56237afc0bde34896481a4b6b29fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDialogueNode: {fileID: 11400000, guid: a016d168fc77b6a4db1f4a826e2c4229, type: 2}
+  startDialogueNode: {fileID: 11400000, guid: cfaca3b428ef53048a733dc900f8ef8a, type: 2}
 --- !u!4 &809151805
 Transform:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3accc31699df9488e70c978fb6a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Day: 1
+  Day: 4
   FreeRoam: 0
   CalViewed: 0
 --- !u!1 &1049982863

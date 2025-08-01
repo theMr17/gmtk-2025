@@ -111,11 +111,22 @@ public class DialogueManager : MonoBehaviour
       characterBust = null;
     }
 
+    string dialogue = currentLine.text;
+
+    // If textVariants is not null and has entries, randomly select one; otherwise use default text
+    if (currentLine.textVariants != null && currentLine.textVariants.Length > 0)
+    {
+      int randomIndex = UnityEngine.Random.Range(0, currentLine.textVariants.Length + 1);
+      // If randomIndex equals textVariants.Length, use line.text; else use the variant
+      // This allows for a random selection of the default text or one of the variants
+      dialogue = (randomIndex == currentLine.textVariants.Length) ? currentLine.text : currentLine.textVariants[randomIndex];
+    }
+
     var eventArgs = new DialogueEventArgs
     {
       characterName = characterName,
       characterBust = characterBust,
-      dialogue = currentLine.text
+      dialogue = dialogue
     };
 
     if (isDialogueStart)
