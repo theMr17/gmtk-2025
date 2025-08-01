@@ -1659,7 +1659,7 @@ GameObject:
   - component: {fileID: 1002740714}
   - component: {fileID: 1002740715}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: S04RoomSceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
