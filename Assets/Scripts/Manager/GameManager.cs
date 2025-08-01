@@ -8,10 +8,11 @@ public class GameManager : MonoBehaviour
   public event EventHandler<DialogueTriggeredEventArgs> OnDialogueTriggered;
   public class DialogueTriggeredEventArgs : EventArgs
   {
-    public DialogueSo dialogue;
+    public DialogueNodeSo dialogueNode;
   }
 
-  [SerializeField] private DialogueSo introDialogue;
+  [SerializeField] private DialogueNodeSo[] startDialogueNodes;
+  [SerializeField] public GameStateSo gameState;
 
   private void Awake()
   {
@@ -30,7 +31,26 @@ public class GameManager : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.D))
     {
-      OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogue = introDialogue });
+      if (gameState.Day <= 2)
+      {
+        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[gameState.Day - 1] });
+      }
+      else
+      {
+        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[2] });
+      }
     }
+  }
+
+  public void TriggerDialogue(DialogueNodeSo dialogueNode)
+  {
+    if (dialogueNode == null) return;
+
+    OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = dialogueNode });
+  }
+
+  public void EndDay()
+  {
+    DayTimeManager.Instance.EndDay();
   }
 }

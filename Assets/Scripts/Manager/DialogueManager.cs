@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
   public event EventHandler<DialogueEventArgs> OnDialogueStart;
   public event EventHandler<DialogueEventArgs> OnDialogueChange;
   public event EventHandler OnDialogueEnd;
+
   public class DialogueEventArgs : EventArgs
   {
     public string characterName;
@@ -16,15 +17,18 @@ public class DialogueManager : MonoBehaviour
     public string dialogue;
   }
 
-  public event EventHandler<ChoicesEventArgs> OnChoicesAdded;
-  public class ChoicesEventArgs : EventArgs
+  public event EventHandler<OptionsEventArgs> OnOptionsAdded;
+  public class OptionsEventArgs : EventArgs
   {
-    public string[] choices;
+    public string[] options;
   }
 
-  private Queue<DialogueLine> dialogueQueue;
-  private DialogueLine currentLine;
-  private bool isDialogueActive = false;
+  private DialogueNodeSo _currentNode;
+
+  private Queue<DialogueLine> _dialogueQueue;
+  private List<DialogueOption> _dialogueOptions = new();
+  private bool _isDialogueActive = false;
+  private bool _isShowingOptions = false;
 
   private void Awake()
   {
@@ -32,7 +36,7 @@ public class DialogueManager : MonoBehaviour
     {
       Instance = this;
       DontDestroyOnLoad(gameObject);
-      dialogueQueue = new Queue<DialogueLine>();
+      _dialogueQueue = new Queue<DialogueLine>();
     }
     else
     {
@@ -45,47 +49,88 @@ public class DialogueManager : MonoBehaviour
     GameManager.Instance.OnDialogueTriggered += GameManager_OnDialogueTriggered;
   }
 
-  private void GameManager_OnDialogueTriggered(object sender, GameManager.DialogueTriggeredEventArgs e)
+  private void Update()
   {
-    StartDialogue(e.dialogue);
+    if (Input.GetMouseButtonDown(0) && _isDialogueActive && !_isShowingOptions)
+    {
+      ShowNextLine();
+    }
   }
 
-  public void StartDialogue(DialogueSo dialogue)
+  private void GameManager_OnDialogueTriggered(object sender, GameManager.DialogueTriggeredEventArgs e)
   {
-    if (dialogue == null || dialogue.lines == null || dialogue.lines.Count == 0)
+    StartDialogueNode(e.dialogueNode);
+  }
+
+  public void StartDialogueNode(DialogueNodeSo dialogueNode)
+  {
+    Reset();
+
+    _currentNode = dialogueNode;
+
+    if (_currentNode == null || !_currentNode.showNodeCondition.IsMet(GameManager.Instance.gameState))
     {
+      EndDialogueNode();
       return;
     }
 
-    isDialogueActive = true;
-    dialogueQueue.Clear();
+    if (_currentNode.dialogueLines.Length == 0)
+    {
+      ShowOptions();
+      return;
+    }
 
-    foreach (DialogueLine line in dialogue.lines) dialogueQueue.Enqueue(line);
+    _dialogueQueue.Clear();
+
+    foreach (var line in _currentNode.dialogueLines)
+    {
+      if (line.showLineCondition.IsMet(GameManager.Instance.gameState))
+      {
+        _dialogueQueue.Enqueue(line);
+      }
+    }
 
     ShowNextLine(isDialogueStart: true);
   }
 
-  public void ShowNextLine(bool isDialogueStart = false)
+  void ShowNextLine(bool isDialogueStart = false)
   {
-    if (dialogueQueue.Count == 0)
+    if (_dialogueQueue.Count == 0)
     {
-      EndDialogue();
+      ShowOptions();
       return;
     }
 
-    currentLine = dialogueQueue.Dequeue();
+    _isDialogueActive = true;
+    DialogueLine currentLine = _dialogueQueue.Dequeue();
 
     string characterName = currentLine.character != null ? currentLine.character.characterName : "Unknown";
     Sprite characterBust = currentLine.character != null ? currentLine.character.characterBust : null;
+
+    if (currentLine.hideCharacterIfConditionMet && currentLine.hideCharacterCondition.IsMet(GameManager.Instance.gameState))
+    {
+      characterName = "???";
+      characterBust = null;
+    }
+
+    string dialogue = currentLine.text;
+
+    // If textVariants is not null and has entries, randomly select one; otherwise use default text
+    if (currentLine.textVariants != null && currentLine.textVariants.Length > 0)
+    {
+      int randomIndex = UnityEngine.Random.Range(0, currentLine.textVariants.Length + 1);
+      // If randomIndex equals textVariants.Length, use line.text; else use the variant
+      // This allows for a random selection of the default text or one of the variants
+      dialogue = (randomIndex == currentLine.textVariants.Length) ? currentLine.text : currentLine.textVariants[randomIndex];
+    }
 
     var eventArgs = new DialogueEventArgs
     {
       characterName = characterName,
       characterBust = characterBust,
-      dialogue = currentLine.message
+      dialogue = dialogue
     };
 
-    // Trigger event accordingly 
     if (isDialogueStart)
     {
       OnDialogueStart?.Invoke(this, eventArgs);
@@ -95,52 +140,109 @@ public class DialogueManager : MonoBehaviour
       OnDialogueChange?.Invoke(this, eventArgs);
     }
 
-    if (currentLine.choices != null && currentLine.choices.Count > 0)
+    if (currentLine.action != DialogueActionType.None)
     {
-      string[] choiceTexts = new string[currentLine.choices.Count];
-      for (int i = 0; i < currentLine.choices.Count; i++)
+      TriggerDialogueAction(currentLine.action);
+    }
+  }
+
+  private void ShowOptions()
+  {
+    if (_currentNode.options == null || _currentNode.options.Length == 0)
+    {
+      EndDialogueNode();
+      return;
+    }
+
+    _isShowingOptions = true;
+    _dialogueOptions.Clear();
+
+    for (int i = 0; i < _currentNode.options.Length; i++)
+    {
+      if (_currentNode.options[i].showOptionCondition.IsMet(GameManager.Instance.gameState))
       {
-        choiceTexts[i] = currentLine.choices[i].choiceText;
+        _dialogueOptions.Add(_currentNode.options[i]);
       }
-      OnChoicesAdded?.Invoke(this, new ChoicesEventArgs { choices = choiceTexts });
     }
-  }
 
-  public void ChooseOption(int choiceIndex)
-  {
-    if (currentLine != null && currentLine.choices != null && choiceIndex >= 0 && choiceIndex < currentLine.choices.Count)
+    OnOptionsAdded?.Invoke(this, new OptionsEventArgs
     {
-      // --------------------------------
-      // TODO: Handle choice consequences
-      // --------------------------------
-
-      ShowNextLine();
-    }
+      options = _dialogueOptions.ConvertAll(dialogueOption => dialogueOption.option).ToArray()
+    });
   }
 
-  private void EndDialogue()
+  public void ChooseOption(int selectedOptionIndex)
   {
-    isDialogueActive = false;
-    currentLine = null;
+    if (_currentNode == null || _currentNode.options == null || selectedOptionIndex < 0 || selectedOptionIndex >= _dialogueOptions.Count)
+    {
+      EndDialogueNode();
+      return;
+    }
+
+    if (_dialogueOptions[selectedOptionIndex].action != DialogueActionType.None)
+    {
+      TriggerDialogueAction(_dialogueOptions[selectedOptionIndex].action);
+    }
+
+    DialogueNodeSo nextNode = _dialogueOptions[selectedOptionIndex].nextNode;
+
+    if (nextNode != null)
+    {
+      StartNextDialogueNode(nextNode);
+      return;
+    }
+
+    EndDialogueNode();
+  }
+
+  private void StartNextDialogueNode(DialogueNodeSo nextNode)
+  {
+    if (nextNode == null)
+    {
+      EndDialogueNode();
+      return;
+    }
+
+    Reset();
+
+    StartDialogueNode(nextNode);
+  }
+
+  private void EndDialogueNode()
+  {
+    if (_currentNode != null && _currentNode.nextNode != null)
+    {
+      StartNextDialogueNode(_currentNode.nextNode);
+      return;
+    }
+
+    Reset();
+
     OnDialogueEnd?.Invoke(this, EventArgs.Empty);
   }
 
-  public bool IsDialogueActive()
+  private void Reset()
   {
-    return isDialogueActive;
+    _isDialogueActive = false;
+    _isShowingOptions = false;
+    _currentNode = null;
+    _dialogueQueue.Clear();
+    _dialogueOptions.Clear();
   }
 
-  public bool HasChoices()
+  private void TriggerDialogueAction(DialogueActionType action)
   {
-    return currentLine != null && currentLine.choices != null && currentLine.choices.Count > 0;
-  }
-
-  private void Update()
-  {
-    // Allow advance dialogue only if no choices 
-    if (Input.GetMouseButtonDown(0) && isDialogueActive && !HasChoices())
+    switch (action)
     {
-      ShowNextLine();
+      case DialogueActionType.EndDay:
+        GameManager.Instance.EndDay();
+        break;
+      case DialogueActionType.EnableFreeRoam:
+        GameManager.Instance.gameState.FreeRoam = true;
+        break;
+      case DialogueActionType.DisableFreeRoam:
+        GameManager.Instance.gameState.FreeRoam = false;
+        break;
     }
   }
 }
