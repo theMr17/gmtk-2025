@@ -1,17 +1,9 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class S04RoomSceneManager : MonoBehaviour
 {
   public static S04RoomSceneManager Instance { get; private set; }
-
-  [Serializable]
-  struct InteractableObject
-  {
-    public Button button;
-    public DialogueNodeSo dialogueNode;
-  }
 
   [SerializeField] private InteractableObject bedObject;
   [SerializeField] private InteractableObject calendarObject;
