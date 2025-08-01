@@ -44,6 +44,6 @@ public class GameManager : MonoBehaviour
 
   public void EndDay()
   {
-    TimeManager.Instance.EndDay();
+    DayTimeManager.Instance.EndDay();
   }
 }
