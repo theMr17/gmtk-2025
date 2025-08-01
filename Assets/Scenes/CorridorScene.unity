@@ -1439,6 +1439,9 @@ MonoBehaviour:
   officeDoorObject:
     button: {fileID: 1191754940}
     dialogueNode: {fileID: 11400000, guid: adbc4b624e227d749b2eea2744316292, type: 2}
+  guardObject:
+    button: {fileID: 1597067182}
+    dialogueNode: {fileID: 11400000, guid: 512dc8212265e0d4e90140ce7824b7c6, type: 2}
   guardTimeRange1:
     StartHour: 8
     StartMinute: 0
