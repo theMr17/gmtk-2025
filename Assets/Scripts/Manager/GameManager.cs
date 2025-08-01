@@ -33,4 +33,16 @@ public class GameManager : MonoBehaviour
       OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNode });
     }
   }
+
+  public void TriggerDialogue(DialogueNodeSo dialogueNode)
+  {
+    if (dialogueNode == null) return;
+
+    OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = dialogueNode });
+  }
+
+  public void EndDay()
+  {
+    GetComponent<GameState>().EndDay();
+  }
 }

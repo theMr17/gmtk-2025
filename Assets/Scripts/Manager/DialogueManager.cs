@@ -64,6 +64,8 @@ public class DialogueManager : MonoBehaviour
 
   public void StartDialogueNode(DialogueNodeSo dialogueNode)
   {
+    Reset();
+
     _currentNode = dialogueNode;
 
     if (_currentNode == null || !_currentNode.showNodeCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
@@ -172,6 +174,11 @@ public class DialogueManager : MonoBehaviour
       return;
     }
 
+    if (_dialogueOptions[selectedOptionIndex].action != DialogueActionType.None)
+    {
+      TriggerDialogueAction(_dialogueOptions[selectedOptionIndex].action);
+    }
+
     DialogueNodeSo nextNode = _dialogueOptions[selectedOptionIndex].nextNode;
 
     if (nextNode != null)
@@ -191,11 +198,7 @@ public class DialogueManager : MonoBehaviour
       return;
     }
 
-    _isDialogueActive = false;
-    _isShowingOptions = false;
-    _currentNode = null;
-    _dialogueQueue.Clear();
-    _dialogueOptions.Clear();
+    Reset();
 
     StartDialogueNode(nextNode);
   }
@@ -208,12 +211,29 @@ public class DialogueManager : MonoBehaviour
       return;
     }
 
+    Reset();
+
+    OnDialogueEnd?.Invoke(this, EventArgs.Empty);
+  }
+
+  private void Reset()
+  {
     _isDialogueActive = false;
     _isShowingOptions = false;
     _currentNode = null;
     _dialogueQueue.Clear();
     _dialogueOptions.Clear();
+  }
 
-    OnDialogueEnd?.Invoke(this, EventArgs.Empty);
+  private void TriggerDialogueAction(DialogueActionType action)
+  {
+    switch (action)
+    {
+      case DialogueActionType.EndDay:
+        GameManager.Instance.EndDay();
+        break;
+      default:
+        break;
+    }
   }
 }

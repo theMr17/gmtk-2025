@@ -48,6 +48,9 @@ public class DialogueOption
   [Tooltip("The next dialogue node to transition to if this option is selected.")]
   public DialogueNodeSo nextNode;
 
+  [Tooltip("Action triggered when this option is selected.")]
+  public DialogueActionType action = DialogueActionType.None;
+
   [Tooltip("Condition required for this option to appear. If not met, this option is hidden.")]
   public Condition showOptionCondition;
 }
@@ -79,4 +82,13 @@ public class Condition
     if (negateFreeRoam && state.FreeRoam) return false;
     return true;
   }
+}
+
+public enum DialogueActionType
+{
+  None,
+  EndDay,
+  ViewCalendar,
+  StartCutscene,
+  CustomEvent
 }
