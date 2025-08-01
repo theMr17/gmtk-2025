@@ -1425,6 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a2021e8ea857c48926e6453dcd486d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corridorIntroDialogueNode: {fileID: 11400000, guid: 2993e8f54e43d0f48b561cb733af6c5c, type: 2}
   slipObject:
     button: {fileID: 945447801}
     dialogueNode: {fileID: 0}
