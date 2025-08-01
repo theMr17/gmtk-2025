@@ -16,5 +16,5 @@ MonoBehaviour:
   CalViewed: 0
   TvViewed: 0
   FreeRoam: 0
-  CorViewed: 0
+  CorViewed: 1
   LabAccident: 0

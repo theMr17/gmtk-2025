@@ -4,6 +4,8 @@ public class CorridorSceneManager : MonoBehaviour
 {
   public static CorridorSceneManager Instance { get; private set; }
 
+  [SerializeField] private DialogueNodeSo corridorIntroDialogueNode;
+
   [SerializeField] private InteractableObject slipObject;
   [SerializeField] private DialogueNodeSo slipDialogueNodeGuardPresent;
   [SerializeField] private DialogueNodeSo slipDialogueNodeGuardAbsent;
@@ -23,6 +25,15 @@ public class CorridorSceneManager : MonoBehaviour
   private void Start()
   {
     slipObject.button.onClick.AddListener(() => HandleSlipInteraction());
+  }
+
+  private void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.CorViewed < 1)
+    {
+      GameManager.Instance.gameState.CorViewed++;
+      GameManager.Instance.TriggerDialogue(corridorIntroDialogueNode);
+    }
   }
 
   private void HandleSlipInteraction()
