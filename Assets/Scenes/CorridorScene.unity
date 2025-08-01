@@ -1431,6 +1431,14 @@ MonoBehaviour:
     dialogueNode: {fileID: 0}
   slipDialogueNodeGuardPresent: {fileID: 11400000, guid: f1f5862d1f2c1864c8ba7feb998ca550, type: 2}
   slipDialogueNodeGuardAbsent: {fileID: 11400000, guid: bb61c77fc72c19345a7441a6e0b5955f, type: 2}
+  labDoorObject:
+    button: {fileID: 1269849602}
+    dialogueNode: {fileID: 0}
+  labDoorDialogueNodeGuardPresent: {fileID: 11400000, guid: e08e195ae8f1e5342bdeec6f5166ecf6, type: 2}
+  labDoorDialogueNodeGuardAbsent: {fileID: 11400000, guid: caba753729f4c9045a8fcd12181102bc, type: 2}
+  officeDoorObject:
+    button: {fileID: 1191754940}
+    dialogueNode: {fileID: 11400000, guid: adbc4b624e227d749b2eea2744316292, type: 2}
   guardTimeRange1:
     StartHour: 8
     StartMinute: 0

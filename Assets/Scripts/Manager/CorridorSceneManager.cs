@@ -10,6 +10,12 @@ public class CorridorSceneManager : MonoBehaviour
   [SerializeField] private DialogueNodeSo slipDialogueNodeGuardPresent;
   [SerializeField] private DialogueNodeSo slipDialogueNodeGuardAbsent;
 
+  [SerializeField] private InteractableObject labDoorObject;
+  [SerializeField] private DialogueNodeSo labDoorDialogueNodeGuardPresent;
+  [SerializeField] private DialogueNodeSo labDoorDialogueNodeGuardAbsent;
+
+  [SerializeField] private InteractableObject officeDoorObject;
+
   [Header("Time Ranges")]
   [SerializeField] private TimeRange guardTimeRange1 = new TimeRange { StartHour = 8, StartMinute = 0, EndHour = 10, EndMinute = 0 };
   [SerializeField] private TimeRange guardTimeRange2 = new TimeRange { StartHour = 13, StartMinute = 0, EndHour = 14, EndMinute = 30 };
@@ -25,6 +31,8 @@ public class CorridorSceneManager : MonoBehaviour
   private void Start()
   {
     slipObject.button.onClick.AddListener(() => HandleSlipInteraction());
+    labDoorObject.button.onClick.AddListener(() => HandleLabDoorInteraction());
+    officeDoorObject.button.onClick.AddListener(() => HandleOfficeDoorInteraction());
   }
 
   private void Update()
@@ -45,6 +53,34 @@ public class CorridorSceneManager : MonoBehaviour
     else
     {
       GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardAbsent);
+    }
+  }
+
+  private void HandleLabDoorInteraction()
+  {
+    if (IsGuardPresent())
+    {
+      GameManager.Instance.TriggerDialogue(labDoorDialogueNodeGuardPresent);
+    }
+    else if (GameManager.Instance.gameState.LabAccident == 2)
+    {
+      GameManager.Instance.TriggerDialogue(labDoorDialogueNodeGuardAbsent);
+    }
+    else
+    {
+      // Enter Lab
+    }
+  }
+
+  private void HandleOfficeDoorInteraction()
+  {
+    if (IsGuardPresent())
+    {
+      GameManager.Instance.TriggerDialogue(officeDoorObject.dialogueNode);
+    }
+    else
+    {
+      // Enter Office
     }
   }
 
