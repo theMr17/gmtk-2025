@@ -139,6 +139,11 @@ public class DialogueManager : MonoBehaviour
     {
       OnDialogueChange?.Invoke(this, eventArgs);
     }
+
+    if (currentLine.action != DialogueActionType.None)
+    {
+      TriggerDialogueAction(currentLine.action);
+    }
   }
 
   private void ShowOptions()
@@ -232,7 +237,11 @@ public class DialogueManager : MonoBehaviour
       case DialogueActionType.EndDay:
         GameManager.Instance.EndDay();
         break;
-      default:
+      case DialogueActionType.EnableFreeRoam:
+        GameManager.Instance.gameState.FreeRoam = true;
+        break;
+      case DialogueActionType.DisableFreeRoam:
+        GameManager.Instance.gameState.FreeRoam = false;
         break;
     }
   }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03303fe95b621834da7b7fbb129f3b89, type: 3}
-  m_Name: ST006
+  m_Name: ST005
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: The man appears to sigh in relief, then gives me a reassuring smile.
+  - text: "The Warden\u2019s smile tightens a little."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -34,28 +34,7 @@ MonoBehaviour:
       minTvViewed: -1
       maxTvViewed: -1
     action: 0
-  - text: "Ah, your memories were wiped. Don\u2019t worry, this is completely expected."
-    textVariants: []
-    character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
-    hideCharacterIfConditionMet: 1
-    hideCharacterCondition:
-      minDay: 1
-      maxDay: 1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-    showLineCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-    action: 0
-  - text: You can call me Warden.
+  - text: "I\u2026 see. That\u2019s unusual, but not completely unexpected."
     textVariants: []
     character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     hideCharacterIfConditionMet: 0
@@ -76,7 +55,7 @@ MonoBehaviour:
       minTvViewed: -1
       maxTvViewed: -1
     action: 0
-  - text: "Don\u2019t worry, I\u2019m your friend.\r\n"
+  - text: Thank you for your honesty, Subject Four.
     textVariants: []
     character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     hideCharacterIfConditionMet: 0
@@ -97,8 +76,29 @@ MonoBehaviour:
       minTvViewed: -1
       maxTvViewed: -1
     action: 0
-  - text: "You had an accident that wiped your memories. But that\u2019s okay, I\u2019ll
-      take care of you."
+  - text: The Warden moves towards the door.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+    action: 0
+  - text: I have to go do something. Please, feel free to make yourself at home in
+      this room.
     textVariants: []
     character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     hideCharacterIfConditionMet: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
       minTvViewed: -1
       maxTvViewed: -1
     action: 0
-  - text: Your name around here is Subject Four.
+  - text: " Let\u2019s just stay here today, this is safest for testing."
     textVariants: []
     character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     hideCharacterIfConditionMet: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
       minTvViewed: -1
       maxTvViewed: -1
     action: 0
-  - text: You must be feeling disoriented. Confused.
+  - text: Have a good day, Four.
     textVariants: []
     character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     hideCharacterIfConditionMet: 0
@@ -161,9 +161,11 @@ MonoBehaviour:
       minTvViewed: -1
       maxTvViewed: -1
     action: 0
-  - text: "That\u2019s okay, just relax."
+  - text: 'It seems like he locked the room shut.
+
+'
     textVariants: []
-    character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
       minDay: -1
@@ -181,74 +183,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
-    action: 0
-  - text: Everyone in this facility is here to help you. We want you to relax so
-      you can recover in mind and body.
-    textVariants: []
-    character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
-    hideCharacterIfConditionMet: 0
-    hideCharacterCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-    showLineCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-    action: 0
-  options:
-  - option: What sort of accident was I in?
-    nextNode: {fileID: 11400000, guid: 358ee4e70d89d6147843355ad2cb3605, type: 2}
-    action: 0
-    showOptionCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-  - option: What sort of facility is this?
-    nextNode: {fileID: 11400000, guid: d3183591f32f9344db5c952cc0a78bfe, type: 2}
-    action: 0
-    showOptionCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-  - option: Why all the fuss about me?
-    nextNode: {fileID: 11400000, guid: dd9c0fc561375b848bf8052c7341b737, type: 2}
-    action: 0
-    showOptionCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-  - option: "This facility\u2026 you\u2019re researching me, aren\u2019t you?"
-    nextNode: {fileID: 11400000, guid: 80728483cef20894d962357e1eed2c53, type: 2}
-    action: 0
-    showOptionCondition:
-      minDay: 2
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
+    action: 3
+  options: []
   nextNode: {fileID: 0}
   showNodeCondition:
     minDay: -1

@@ -37,6 +37,9 @@ public class DialogueLine
 
   [Tooltip("Condition required to show this line. If not met, this line is skipped.")]
   public Condition showLineCondition;
+
+  [Tooltip("Action triggered when this line is shown.")]
+  public DialogueActionType action = DialogueActionType.None;
 }
 
 [System.Serializable]
@@ -96,4 +99,6 @@ public enum DialogueActionType
 {
   None,
   EndDay,
+  EnableFreeRoam,
+  DisableFreeRoam,
 }
