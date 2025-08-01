@@ -9,6 +9,9 @@ public class GameStateSo : ScriptableObject
   [Tooltip("Number of times the calendar has been viewed.")]
   public int CalViewed = 0;
 
+  [Tooltip("Number of times the calendar has been viewed.")]
+  public int HallViewed = 0;
+
   [Tooltip("Number of times the TV has been viewed.")]
   public int TvViewed = 0;
 
