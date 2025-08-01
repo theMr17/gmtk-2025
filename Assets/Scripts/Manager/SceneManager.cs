@@ -29,7 +29,7 @@ public class SceneManager : MonoBehaviour
     bedObject.button.onClick.AddListener(() => GameManager.Instance.TriggerDialogue(bedObject.dialogueNode));
     calendarObject.button.onClick.AddListener(() => GameManager.Instance.TriggerDialogue(calendarObject.dialogueNode));
     doorObject.button.onClick.AddListener(() => GameManager.Instance.TriggerDialogue(doorObject.dialogueNode));
-    // tvObject.button.onClick.AddListener(() => GameManager.Instance.TriggerDialogue(tvObject.dialogueNode));
+    tvObject.button.onClick.AddListener(() => GameManager.Instance.TriggerDialogue(tvObject.dialogueNode));
     musicPlayerObject.button.onClick.AddListener(() => GameManager.Instance.TriggerDialogue(musicPlayerObject.dialogueNode));
     booksObject.button.onClick.AddListener(() => GameManager.Instance.TriggerDialogue(booksObject.dialogueNode));
   }

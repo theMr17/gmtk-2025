@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
   }
 
   [SerializeField] private DialogueNodeSo startDialogueNode;
+  [SerializeField] public GameStateSo gameState;
 
   private void Awake()
   {
@@ -43,6 +44,6 @@ public class GameManager : MonoBehaviour
 
   public void EndDay()
   {
-    GetComponent<GameState>().EndDay();
+    TimeManager.Instance.EndDay();
   }
 }

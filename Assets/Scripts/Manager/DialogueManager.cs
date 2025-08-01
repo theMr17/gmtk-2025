@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
 
     _currentNode = dialogueNode;
 
-    if (_currentNode == null || !_currentNode.showNodeCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
+    if (_currentNode == null || !_currentNode.showNodeCondition.IsMet(GameManager.Instance.gameState))
     {
       EndDialogueNode();
       return;
@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     foreach (var line in _currentNode.dialogueLines)
     {
-      if (line.showLineCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
+      if (line.showLineCondition.IsMet(GameManager.Instance.gameState))
       {
         _dialogueQueue.Enqueue(line);
       }
@@ -107,7 +107,7 @@ public class DialogueManager : MonoBehaviour
     string characterName = currentLine.character != null ? currentLine.character.characterName : "Unknown";
     Sprite characterBust = currentLine.character != null ? currentLine.character.characterBust : null;
 
-    if (currentLine.hideCharacterIfConditionMet && currentLine.hideCharacterCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
+    if (currentLine.hideCharacterIfConditionMet && currentLine.hideCharacterCondition.IsMet(GameManager.Instance.gameState))
     {
       characterName = "???";
       characterBust = null;
@@ -154,7 +154,7 @@ public class DialogueManager : MonoBehaviour
 
     for (int i = 0; i < _currentNode.options.Length; i++)
     {
-      if (_currentNode.options[i].showOptionCondition.IsMet(GameManager.Instance.GetComponent<GameState>()))
+      if (_currentNode.options[i].showOptionCondition.IsMet(GameManager.Instance.gameState))
       {
         _dialogueOptions.Add(_currentNode.options[i]);
       }

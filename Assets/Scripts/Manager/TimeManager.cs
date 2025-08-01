@@ -86,4 +86,15 @@ public class TimeManager : MonoBehaviour
             clockText.text = $"{Hour:00}:{Minute:00}";
         }
     }
+
+    public void EndDay()
+    {
+        GameStateSo gameState = GameManager.Instance.gameState;
+        gameState.Day++;
+        if (gameState.CalViewed == 1 || gameState.CalViewed == 3 || gameState.CalViewed == 5)
+            gameState.CalViewed++;
+
+        if (gameState.TvViewed == 1 || gameState.TvViewed == 3)
+            gameState.TvViewed++;
+    }
 }

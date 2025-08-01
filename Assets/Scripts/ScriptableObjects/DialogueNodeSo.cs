@@ -73,11 +73,19 @@ public class Condition
   [Tooltip("If >= 0, the calendar must have been viewed this exact number of times.")]
   public int requiredCalViewed = -1;
 
-  public bool IsMet(GameState state)
+  [Tooltip("If >= 0, the TV must have been viewed at least this many times.")]
+  public int minTvViewed = -1;
+
+  [Tooltip("If >= 0, the TV must have been viewed at most this many times.")]
+  public int maxTvViewed = -1;
+
+  public bool IsMet(GameStateSo state)
   {
     if (minDay >= 0 && state.Day < minDay) return false;
     if (maxDay >= 0 && state.Day > maxDay) return false;
     if (requiredCalViewed >= 0 && state.CalViewed != requiredCalViewed) return false;
+    if (minTvViewed >= 0 && state.TvViewed < minTvViewed) return false;
+    if (maxTvViewed >= 0 && state.TvViewed > maxTvViewed) return false;
     if (requiresFreeRoam && !state.FreeRoam) return false;
     if (negateFreeRoam && state.FreeRoam) return false;
     return true;
@@ -88,7 +96,4 @@ public enum DialogueActionType
 {
   None,
   EndDay,
-  ViewCalendar,
-  StartCutscene,
-  CustomEvent
 }
