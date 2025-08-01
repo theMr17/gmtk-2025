@@ -1374,7 +1374,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f56237afc0bde34896481a4b6b29fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDialogueNode: {fileID: 11400000, guid: cfaca3b428ef53048a733dc900f8ef8a, type: 2}
+  startDialogueNodes:
+  - {fileID: 11400000, guid: cda534dba73d35340bad7cebf2e32fdb, type: 2}
+  - {fileID: 11400000, guid: 76456b979d42b5e4bbd1c8efbb5b1929, type: 2}
+  - {fileID: 11400000, guid: cfaca3b428ef53048a733dc900f8ef8a, type: 2}
   gameState: {fileID: 11400000, guid: 4aa1c7c0114eb0b43a53cf39d33b4ac7, type: 2}
 --- !u!4 &809151805
 Transform:

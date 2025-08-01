@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public DialogueNodeSo dialogueNode;
   }
 
-  [SerializeField] private DialogueNodeSo startDialogueNode;
+  [SerializeField] private DialogueNodeSo[] startDialogueNodes;
   [SerializeField] public GameStateSo gameState;
 
   private void Awake()
@@ -31,7 +31,14 @@ public class GameManager : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.D))
     {
-      OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNode });
+      if (gameState.Day <= 2)
+      {
+        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[gameState.Day - 1] });
+      }
+      else
+      {
+        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[2] });
+      }
     }
   }
 
