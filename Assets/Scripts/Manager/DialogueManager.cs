@@ -22,6 +22,11 @@ public class DialogueManager : MonoBehaviour
   {
     public string[] options;
   }
+  public event EventHandler<OptionsChosenEventArgs> OnOptionsChosen;
+  public class OptionsChosenEventArgs : EventArgs
+  {
+    public int selectedOptionIndex;
+  }
 
   private DialogueNodeSo _currentNode;
 
@@ -178,6 +183,11 @@ public class DialogueManager : MonoBehaviour
       EndDialogueNode();
       return;
     }
+
+    OnOptionsChosen?.Invoke(this, new OptionsChosenEventArgs
+    {
+      selectedOptionIndex = selectedOptionIndex
+    });
 
     if (_dialogueOptions[selectedOptionIndex].action != DialogueActionType.None)
     {

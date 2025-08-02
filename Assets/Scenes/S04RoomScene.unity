@@ -2593,6 +2593,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 468753185}
     m_Modifications:
+    - target: {fileID: 1411830941873575840, guid: bd784b21f2554b344afb233c1054a9c3, type: 3}
+      propertyPath: m_overflowMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2577102822715223810, guid: bd784b21f2554b344afb233c1054a9c3, type: 3}
       propertyPath: m_Name
       value: DialogueUi

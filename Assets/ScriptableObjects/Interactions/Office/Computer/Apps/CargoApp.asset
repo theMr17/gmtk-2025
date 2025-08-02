@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4881df56741b441bfc9cc1180c50f0, type: 3}
+  m_Name: CargoApp
+  m_EditorClassIdentifier: 
+  appName: Cargo
+  description: Viw cargo requests orders
+  icon: {fileID: 3520532602161927012, guid: 6437db6d63953584aae97a919c294c88, type: 3}
+  appContentPrefab: {fileID: 8118335497704676285, guid: 32f88fa4dafb0ea4aa215881cb51b6aa, type: 3}
+  isPasswordProtected: 0
+  password: 
+  showInAppList: 1

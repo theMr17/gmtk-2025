@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88317aac2c94d9e418bddc2e1e1ebee8, type: 3}
+  m_Name: Log01
+  m_EditorClassIdentifier: 
+  logEntry: 03/01/2002
+  author: Dr. E. Ivanova
+  facility: A73
+  experimentSubject: N/A
+  content: "Chronos Project begins. Our goal: integrate deployment of quantum state
+    temporality factors [REDACTED] and [REDACTED] with rest brainwaves and Cortisol.
+    If successful, the subject will initiate quantum jump to alternate timeline upon
+    dissatisfaction with death or sleep - allowing them to replay a day. Phase I
+    approved by Department of Unconventional Sciences. Budget allocated: [REDACTED]\r"

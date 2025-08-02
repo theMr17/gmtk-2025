@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4881df56741b441bfc9cc1180c50f0, type: 3}
+  m_Name: ProjectLogApp
+  m_EditorClassIdentifier: 
+  appName: Project Logs
+  description: View project logs for chronos project.
+  icon: {fileID: -5034061168752090764, guid: f7bfd35b21a6de840abf2b066827e9b5, type: 3}
+  appContentPrefab: {fileID: 282124616740278105, guid: 811ccfa5c049ff34e93411c8acb36467, type: 3}
+  isPasswordProtected: 0
+  password: 
+  showInAppList: 1
