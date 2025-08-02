@@ -39,7 +39,8 @@ public class NotesUi : MonoBehaviour
     if (index < 0 || index >= notes.Length) return;
 
     noteTitleText.text = notes[index].title;
-    noteContentText.text = notes[index].content;
+    noteContentText.text = $"Date: {notes[index].date}\n\n" +
+                           $"{notes[index].content}";
   }
 
   private void ShowNextNote()
