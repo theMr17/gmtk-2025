@@ -63,7 +63,6 @@ public class VentSceneManager : MonoBehaviour
     }
 
     GameManager.Instance.TriggerDialogue(dialogueNode);
-    DayTimeManager.Instance.PauseTime();
 
     EventHandler onDialogueEndHandler = null;
     onDialogueEndHandler = (sender, e) =>

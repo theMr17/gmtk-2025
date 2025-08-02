@@ -95,6 +95,8 @@ public class DialogueManager : MonoBehaviour
       }
     }
 
+    DayTimeManager.Instance.PauseTime();
+
     ShowNextLine(isDialogueStart: true);
   }
 

@@ -54,6 +54,21 @@ public class DayTimeManager : MonoBehaviour
 
         // Fire initial UI update
         OnMinuteChanged?.Invoke(this, new TimeChangedEventArgs { Hour = _lastHour, Minute = _lastMinute });
+
+        DialogueManager.Instance.OnDialogueStart += DialogManager_OnDialogueStart;
+        DialogueManager.Instance.OnDialogueEnd += DialogManager_OnDialogueEnd;
+    }
+
+    private void DialogManager_OnDialogueStart(object sender, EventArgs e)
+    {
+        // Pause time during dialogue
+        PauseTime();
+    }
+
+    private void DialogManager_OnDialogueEnd(object sender, EventArgs e)
+    {
+        // Resume time after dialogue ends
+        ResumeTime();
     }
 
     private void Update()
@@ -123,4 +138,9 @@ public class DayTimeManager : MonoBehaviour
         OnMinuteChanged?.Invoke(this, new TimeChangedEventArgs { Hour = _lastHour, Minute = _lastMinute });
     }
 
+    void OnDestroy()
+    {
+        DialogueManager.Instance.OnDialogueStart -= DialogManager_OnDialogueStart;
+        DialogueManager.Instance.OnDialogueEnd -= DialogManager_OnDialogueEnd;
+    }
 }
