@@ -82,6 +82,12 @@ public class Condition
   [Tooltip("If >= 0, the TV must have been viewed at most this many times.")]
   public int maxTvViewed = -1;
 
+  [Tooltip("If >= 0, the number of lab accidents must be at least this many.")]
+  public int minLabAccidents = -1;
+
+  [Tooltip("If >= 0, the number of lab accidents must be at most this many.")]
+  public int maxLabAccidents = -1;
+
   public bool IsMet(GameStateSo state)
   {
     if (minDay >= 0 && state.Day < minDay) return false;
@@ -89,6 +95,8 @@ public class Condition
     if (requiredCalViewed >= 0 && state.CalViewed != requiredCalViewed) return false;
     if (minTvViewed >= 0 && state.TvViewed < minTvViewed) return false;
     if (maxTvViewed >= 0 && state.TvViewed > maxTvViewed) return false;
+    if (minLabAccidents >= 0 && state.LabAccident < minLabAccidents) return false;
+    if (maxLabAccidents >= 0 && state.LabAccident > maxLabAccidents) return false;
     if (requiresFreeRoam && !state.FreeRoam) return false;
     if (negateFreeRoam && state.FreeRoam) return false;
     return true;
@@ -101,4 +109,5 @@ public enum DialogueActionType
   EndDay,
   EnableFreeRoam,
   DisableFreeRoam,
+  SendToRoom,
 }

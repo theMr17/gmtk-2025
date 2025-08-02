@@ -1,17 +1,9 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class S04RoomSceneManager : MonoBehaviour
 {
   public static S04RoomSceneManager Instance { get; private set; }
-
-  [Serializable]
-  struct InteractableObject
-  {
-    public Button button;
-    public DialogueNodeSo dialogueNode;
-  }
 
   [SerializeField] private InteractableObject bedObject;
   [SerializeField] private InteractableObject calendarObject;
@@ -78,7 +70,7 @@ public class S04RoomSceneManager : MonoBehaviour
   {
     if (GameManager.Instance.gameState.FreeRoam)
     {
-      // If free roam is enabled, we can open the door
+      SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
     else
     {

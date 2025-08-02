@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
   }
 
   [SerializeField] private DialogueNodeSo[] startDialogueNodes;
+  [SerializeField] private DialogueNodeSo feelingSleepyDialogueNode;
   [SerializeField] public GameStateSo gameState;
 
   private void Awake()
@@ -25,6 +26,11 @@ public class GameManager : MonoBehaviour
     {
       Destroy(gameObject);
     }
+  }
+
+  private void Start()
+  {
+    DayTimeManager.Instance.OnHourChanged += DayTimeManager_OnHourChanged;
   }
 
   private void Update()
@@ -52,5 +58,26 @@ public class GameManager : MonoBehaviour
   public void EndDay()
   {
     DayTimeManager.Instance.EndDay();
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
+  }
+
+  private void DayTimeManager_OnHourChanged(object sender, DayTimeManager.HourChangedEventArgs e)
+  {
+    // Sleep time at 10 PM
+    if (e.Hour == 22)
+    {
+      TriggerDialogue(feelingSleepyDialogueNode);
+    }
+  }
+
+  private void OnDestroy()
+  {
+    DayTimeManager.Instance.OnHourChanged -= DayTimeManager_OnHourChanged;
+  }
+
+  public void SendPlayerToRoom()
+  {
+    gameState.FreeRoam = false;
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
   }
 }

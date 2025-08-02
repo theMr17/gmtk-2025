@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03303fe95b621834da7b7fbb129f3b89, type: 3}
+  m_Name: EG001
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Hello
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: Hey.
+    textVariants: []
+    character: {fileID: 11400000, guid: 9ee65919dc2889246a1b6b0bb6d9f850, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: This guy looks a little grumpy and serious.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  options:
+  - option: Did you know me before?
+    nextNode: {fileID: 11400000, guid: 767902c1642a33d40be01b1296a82625, type: 2}
+    action: 0
+    showOptionCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+  - option: Do you always guard this door?
+    nextNode: {fileID: 11400000, guid: 73e2ad0d6f54af946a66b79a670edec8, type: 2}
+    action: 0
+    showOptionCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+  - option: What is this facility?
+    nextNode: {fileID: 11400000, guid: f922d3e75ba639e42bd18555715bb7bc, type: 2}
+    action: 0
+    showOptionCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+  - option: "There\u2019s an accident in the Lab!"
+    nextNode: {fileID: 11400000, guid: 3e1e1dbee136fb14aa3cedb097829183, type: 2}
+    action: 0
+    showOptionCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: 1
+      maxLabAccidents: 1
+  - option: I remember you. You were here yesterday.
+    nextNode: {fileID: 11400000, guid: 86cbdc9a837275a4b94f76c14fd36687, type: 2}
+    action: 0
+    showOptionCondition:
+      minDay: 2
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+  nextNode: {fileID: 0}
+  showNodeCondition:
+    minDay: -1
+    maxDay: -1
+    requiresFreeRoam: 0
+    negateFreeRoam: 0
+    requiredCalViewed: -1
+    minTvViewed: -1
+    maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1
