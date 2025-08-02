@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class OfficeSceneManager : MonoBehaviour
@@ -6,11 +7,14 @@ public class OfficeSceneManager : MonoBehaviour
 
   [SerializeField] private DialogueNodeSo officeIntroDialogueNode;
 
+  [SerializeField] private InteractableObject computerObject;
   [SerializeField] private InteractableObject coffeeMachineObject;
   [SerializeField] private InteractableObject bookShelfObject;
   [SerializeField] private InteractableObject exitAreaObject;
 
   [SerializeField] private TimeRange wardenTimeRange = new TimeRange { StartHour = 11, StartMinute = 0, EndHour = 16, EndMinute = 0 };
+
+  public event EventHandler OnComputerOpened;
 
   private void Awake()
   {
@@ -19,6 +23,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   private void Start()
   {
+    computerObject.button.onClick.AddListener(() => HandleComputerInteraction());
     coffeeMachineObject.button.onClick.AddListener(() => HandleCoffeeMachineInteraction());
     bookShelfObject.button.onClick.AddListener(() => HandleBookShelfInteraction());
     exitAreaObject.button.onClick.AddListener(() => HandleExitAreaInteraction());
@@ -31,6 +36,11 @@ public class OfficeSceneManager : MonoBehaviour
       GameManager.Instance.gameState.OfficeViewed++;
       GameManager.Instance.TriggerDialogue(officeIntroDialogueNode);
     }
+  }
+
+  private void HandleComputerInteraction()
+  {
+    OnComputerOpened?.Invoke(this, EventArgs.Empty);
   }
 
   private void HandleCoffeeMachineInteraction()
