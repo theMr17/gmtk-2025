@@ -70,7 +70,7 @@ public class S04RoomSceneManager : MonoBehaviour
   {
     if (GameManager.Instance.gameState.FreeRoam)
     {
-      // If free roam is enabled, we can open the door
+      SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
     else
     {

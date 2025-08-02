@@ -14,8 +14,10 @@ public class CorridorSceneManager : MonoBehaviour
   [SerializeField] private DialogueNodeSo labDoorDialogueNodeGuardPresent;
   [SerializeField] private DialogueNodeSo labDoorDialogueNodeGuardAbsent;
 
+  [SerializeField] private InteractableObject entranceHallDoorObject;
   [SerializeField] private InteractableObject officeDoorObject;
   [SerializeField] private InteractableObject guardObject;
+  [SerializeField] private InteractableObject s04RoomDoorObject;
 
   [Header("Time Ranges")]
   [SerializeField] private TimeRange guardTimeRange1 = new TimeRange { StartHour = 8, StartMinute = 0, EndHour = 10, EndMinute = 0 };
@@ -35,6 +37,8 @@ public class CorridorSceneManager : MonoBehaviour
     labDoorObject.button.onClick.AddListener(() => HandleLabDoorInteraction());
     officeDoorObject.button.onClick.AddListener(() => HandleOfficeDoorInteraction());
     guardObject.button.onClick.AddListener(() => HandleGuardInteraction());
+    entranceHallDoorObject.button.onClick.AddListener(() => HandleEntranceHallDoorInteraction());
+    s04RoomDoorObject.button.onClick.AddListener(() => HandleS04RoomDoorInteraction());
   }
 
   private void Update()
@@ -89,6 +93,26 @@ public class CorridorSceneManager : MonoBehaviour
     {
       // Enter Office
     }
+  }
+
+  private void HandleEntranceHallDoorInteraction()
+  {
+    // Check if the time is between 15:45 and 16:45
+    // If so, trigger dialogue, otherwise load the entrance hall scene
+    if (DayTimeManager.Instance.Hour == 15 && DayTimeManager.Instance.Minute >= 45
+        && DayTimeManager.Instance.Hour == 16 && DayTimeManager.Instance.Minute <= 45)
+    {
+      GameManager.Instance.TriggerDialogue(entranceHallDoorObject.dialogueNode);
+    }
+    else
+    {
+      SceneLoader.Instance.LoadScene(SceneLoader.Scene.EntranceHallScene);
+    }
+  }
+
+  private void HandleS04RoomDoorInteraction()
+  {
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
   }
 
   private void HandleGuardInteraction()

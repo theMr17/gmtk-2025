@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class EntranceHallSceneManager : MonoBehaviour
@@ -56,7 +57,7 @@ public class EntranceHallSceneManager : MonoBehaviour
 
     private void HandleExitAreaInteraction()
     {
-        GameManager.Instance.TriggerDialogue(exitAreaObject.dialogueNode);
+        SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
 
     private void HandleGuardInteraction()
