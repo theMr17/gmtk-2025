@@ -14,7 +14,7 @@ public class AppSo : ScriptableObject
   public Sprite icon;
 
   [Tooltip("The GameObject that will be activated when this app is opened.")]
-  public GameObject appUIPrefab;
+  public GameObject appContentPrefab;
 
   [Tooltip("Is the app password protected?")]
   public bool isPasswordProtected;

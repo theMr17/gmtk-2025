@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Email
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 92a5d139e58532b40a19d8f481ed28dd, type: 2}
-  m_sharedMaterial: {fileID: -4833786660154247487, guid: 92a5d139e58532b40a19d8f481ed28dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0cc817625c688e24a84a362454acb028, type: 2}
+  m_sharedMaterial: {fileID: 8215401261520496056, guid: 0cc817625c688e24a84a362454acb028, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 4165191708598354931}
   - component: {fileID: 5934969974417085446}
   - component: {fileID: -4693041666732202584}
+  - component: {fileID: 1454031771114370454}
   m_Layer: 5
   m_Name: AppButton
   m_TagString: Untagged
@@ -215,6 +216,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appNameText: {fileID: 3752992430891037927}
   appIconImage: {fileID: 7453442397153878206}
+--- !u!114 &1454031771114370454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133447086067631636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7453442397153878206}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7060142902780562055
 GameObject:
   m_ObjectHideFlags: 0

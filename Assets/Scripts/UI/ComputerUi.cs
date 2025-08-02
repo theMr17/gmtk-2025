@@ -8,43 +8,87 @@ public class ComputerUi : MonoBehaviour
   [SerializeField] private Transform appListContainer;
   [SerializeField] private Button closeButton;
 
+  [SerializeField] private GameObject desktop;
+  [SerializeField] private GameObject computerWindow;
+
+  private WindowUi windowUi;
+
+  private void Awake()
+  {
+    if (computerWindow != null)
+    {
+      windowUi = computerWindow.GetComponent<WindowUi>();
+    }
+
+    if (closeButton != null)
+    {
+      closeButton.onClick.AddListener(Hide);
+    }
+  }
+
   private void Start()
   {
-    OfficeSceneManager.Instance.OnComputerOpened += OfficeSceneManager_OnComputerOpened;
-    Hide();
+    if (OfficeSceneManager.Instance != null)
+      OfficeSceneManager.Instance.OnComputerOpened += HandleComputerOpened;
 
-    closeButton.onClick.AddListener(() => Hide());
+    if (windowUi != null)
+      windowUi.OnClose += HandleAppClosed;
+    Hide();
   }
 
-  private void OfficeSceneManager_OnComputerOpened(object sender, System.EventArgs e)
+  private void HandleComputerOpened(object sender, System.EventArgs e)
   {
     Show();
-    InitializeComputerUi();
+    PopulateAppList();
   }
 
-  private void InitializeComputerUi()
+  private void HandleAppClosed(object sender, System.EventArgs e)
   {
-    // Clear existing app buttons
+    desktop.SetActive(true);
+    computerWindow.SetActive(false);
+  }
+
+  private void PopulateAppList()
+  {
     foreach (Transform child in appListContainer)
     {
       Destroy(child.gameObject);
     }
 
-    // Instantiate app buttons for each app that should be shown
     foreach (var app in apps)
     {
-      if (app.showInAppList)
-      {
-        GameObject appButton = Instantiate(appButtonPrefab, appListContainer);
-        appButton.GetComponent<AppButtonUi>().Initialize(app);
+      if (!app.showInAppList) continue;
 
+      GameObject appButton = Instantiate(appButtonPrefab, appListContainer);
+      if (appButton.TryGetComponent(out AppButtonUi buttonUi))
+      {
+        buttonUi.Initialize(app);
+      }
+
+      if (appButton.TryGetComponent(out Button btn))
+      {
+        btn.onClick.AddListener(() => OpenApp(app));
       }
     }
+  }
+
+  private void OpenApp(AppSo app)
+  {
+    if (app == null || app.appContentPrefab == null)
+    {
+      return;
+    }
+
+    desktop.SetActive(false);
+    computerWindow.SetActive(true);
+    windowUi.Initialize(app);
   }
 
   private void Show()
   {
     gameObject.SetActive(true);
+    desktop.SetActive(true);
+    computerWindow.SetActive(false);
   }
 
   private void Hide()

@@ -15,7 +15,7 @@ MonoBehaviour:
   appName: Notes
   description: 
   icon: {fileID: 21300000, guid: 522b055c4aa246249809a55b83d979aa, type: 3}
-  appUIPrefab: {fileID: 0}
+  appContentPrefab: {fileID: 4837857685286606684, guid: 2c0a4d2ef363305468af5e49b2fa0400, type: 3}
   isPasswordProtected: 0
   password: 
   showInAppList: 1
