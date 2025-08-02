@@ -85,7 +85,17 @@ public class DayTimeManager : MonoBehaviour
     }
 
     public void PauseTime() => _isPaused = true;
-    public void ResumeTime() => _isPaused = false;
+    public void ResumeTime(int? hours = null, int? mins = null)
+    {
+        if (hours.HasValue && mins.HasValue)
+        {
+            _gameMinutes = Mathf.Clamp(hours.Value * 60 + mins.Value, 0, MinutesPerDay);
+            _lastHour = Hour;
+            _lastMinute = Minute;
+            OnMinuteChanged?.Invoke(this, new TimeChangedEventArgs { Hour = _lastHour, Minute = _lastMinute });
+        }
+        _isPaused = false;
+    }
 
     public void EndDay()
     {
