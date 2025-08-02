@@ -24,13 +24,13 @@ public class DialogueUi : MonoBehaviour
   private void DialogueManager_OnDialogueStart(object sender, DialogueManager.DialogueEventArgs e)
   {
     Show();
-    UpdateDialogue(e.characterName, e.characterBust, e.dialogue);
+    UpdateDialogue(e.characterName, e.characterBust, e.dialogue, e.isThought);
     HideChoices();
   }
 
   private void DialogueManager_OnDialogueChange(object sender, DialogueManager.DialogueEventArgs e)
   {
-    UpdateDialogue(e.characterName, e.characterBust, e.dialogue);
+    UpdateDialogue(e.characterName, e.characterBust, e.dialogue, e.isThought);
     HideChoices();
   }
 
@@ -93,11 +93,19 @@ public class DialogueUi : MonoBehaviour
     HideChoices();
   }
 
-  private void UpdateDialogue(string characterName, Sprite characterBust, string dialogue)
+  private void UpdateDialogue(string characterName, Sprite characterBust, string dialogue, bool isThought)
   {
     _characterNameText.text = characterName;
     _characterBustImage.sprite = characterBust;
-    _dialogueText.text = dialogue;
+
+    if (isThought)
+    {
+      _dialogueText.text = $"({dialogue})";
+    }
+    else
+    {
+      _dialogueText.text = dialogue;
+    }
   }
 
   private void OnDestroy()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ST010
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "The Warden\u2019s smile tightens a little."
+  - text: The Warden looks a little caught off-guard.
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -25,6 +25,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -33,6 +35,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   - text: Why do you say that?
     textVariants: []
@@ -46,6 +50,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -54,6 +60,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   options:
   - option: I explored this place before.
@@ -67,6 +75,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
   - option: "I just thought\u2026 All this focuses on my wellbeing\u2026"
     nextNode: {fileID: 11400000, guid: 8a0a8608fb41bec4f810b7e847d89418, type: 2}
     action: 0
@@ -78,6 +88,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
   nextNode: {fileID: 0}
   showNodeCondition:
     minDay: -1
@@ -87,3 +99,5 @@ MonoBehaviour:
     requiredCalViewed: -1
     minTvViewed: -1
     maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1

@@ -54,6 +54,21 @@ public class DayTimeManager : MonoBehaviour
 
         // Fire initial UI update
         OnMinuteChanged?.Invoke(this, new TimeChangedEventArgs { Hour = _lastHour, Minute = _lastMinute });
+
+        DialogueManager.Instance.OnDialogueStart += DialogManager_OnDialogueStart;
+        DialogueManager.Instance.OnDialogueEnd += DialogManager_OnDialogueEnd;
+    }
+
+    private void DialogManager_OnDialogueStart(object sender, EventArgs e)
+    {
+        // Pause time during dialogue
+        PauseTime();
+    }
+
+    private void DialogManager_OnDialogueEnd(object sender, EventArgs e)
+    {
+        // Resume time after dialogue ends
+        ResumeTime();
     }
 
     private void Update()
@@ -85,7 +100,17 @@ public class DayTimeManager : MonoBehaviour
     }
 
     public void PauseTime() => _isPaused = true;
-    public void ResumeTime() => _isPaused = false;
+    public void ResumeTime(int? hours = null, int? mins = null)
+    {
+        if (hours.HasValue && mins.HasValue)
+        {
+            _gameMinutes = Mathf.Clamp(hours.Value * 60 + mins.Value, 0, MinutesPerDay);
+            _lastHour = Hour;
+            _lastMinute = Minute;
+            OnMinuteChanged?.Invoke(this, new TimeChangedEventArgs { Hour = _lastHour, Minute = _lastMinute });
+        }
+        _isPaused = false;
+    }
 
     public void EndDay()
     {
@@ -101,6 +126,14 @@ public class DayTimeManager : MonoBehaviour
         if (gameState.TvViewed is 1 or 3)
             gameState.TvViewed++;
 
+        gameState.LabAccident = 0;
+        gameState.LadderVent = 0;
+        gameState.SelOrg = 0;
+        gameState.SelMove = 0;
+        gameState.EnteredBox = 0;
+        gameState.StoredBox = 0;
+        gameState.OrderCargo = 0;
+
         // Fire OnDayPassed event for any listeners (UI, quest systems, etc.)
         OnDayPassed?.Invoke(this, EventArgs.Empty);
 
@@ -113,4 +146,9 @@ public class DayTimeManager : MonoBehaviour
         OnMinuteChanged?.Invoke(this, new TimeChangedEventArgs { Hour = _lastHour, Minute = _lastMinute });
     }
 
+    void OnDestroy()
+    {
+        DialogueManager.Instance.OnDialogueStart -= DialogManager_OnDialogueStart;
+        DialogueManager.Instance.OnDialogueEnd -= DialogManager_OnDialogueEnd;
+    }
 }

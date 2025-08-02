@@ -1,0 +1,553 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03303fe95b621834da7b7fbb129f3b89, type: 3}
+  m_Name: GameEndDialogue
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: "\u2026"
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "\u2026"
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "And just like that, I\u2019m out of the facility."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "I can\u2019t believe it."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: Through the sounds of my beating heart, I hear the couriers set down the
+      box and head somewhere nearby.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: 'This is my chance. '
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: Making as little sound as I can, I get out of the box.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: And I run.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: I run as far as I can. Without thinking. Without looking back.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Until I find\u2026"
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "\u2026A beautiful golden wheat field, stretching out endlessly."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: This is it. The outside world.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "It\u2019s over."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: No more guards. No more warden. No facility.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: Just the real sun and the real air.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "I don\u2019t know what\u2019s waiting for me out here."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "I\u2019ve forgotten so much - my name, my past, my family."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "But this - this moment I\u2019ll remember forever."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "I\u2019m done reliving their day."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "This one\u2026"
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: This one is mine.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  options: []
+  nextNode: {fileID: 0}
+  showNodeCondition:
+    minDay: -1
+    maxDay: -1
+    requiresFreeRoam: 0
+    negateFreeRoam: 0
+    requiredCalViewed: -1
+    minTvViewed: -1
+    maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1

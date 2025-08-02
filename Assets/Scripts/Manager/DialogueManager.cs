@@ -15,12 +15,18 @@ public class DialogueManager : MonoBehaviour
     public string characterName;
     public Sprite characterBust;
     public string dialogue;
+    public bool isThought;
   }
 
   public event EventHandler<OptionsEventArgs> OnOptionsAdded;
   public class OptionsEventArgs : EventArgs
   {
     public string[] options;
+  }
+  public event EventHandler<OptionsChosenEventArgs> OnOptionsChosen;
+  public class OptionsChosenEventArgs : EventArgs
+  {
+    public int selectedOptionIndex;
   }
 
   private DialogueNodeSo _currentNode;
@@ -90,6 +96,8 @@ public class DialogueManager : MonoBehaviour
       }
     }
 
+    DayTimeManager.Instance.PauseTime();
+
     ShowNextLine(isDialogueStart: true);
   }
 
@@ -123,12 +131,12 @@ public class DialogueManager : MonoBehaviour
       // This allows for a random selection of the default text or one of the variants
       dialogue = (randomIndex == currentLine.textVariants.Length) ? currentLine.text : currentLine.textVariants[randomIndex];
     }
-
     var eventArgs = new DialogueEventArgs
     {
       characterName = characterName,
       characterBust = characterBust,
-      dialogue = dialogue
+      dialogue = dialogue,
+      isThought = currentLine.character.name == "Thoughts"
     };
 
     if (isDialogueStart)
@@ -178,6 +186,11 @@ public class DialogueManager : MonoBehaviour
       EndDialogueNode();
       return;
     }
+
+    OnOptionsChosen?.Invoke(this, new OptionsChosenEventArgs
+    {
+      selectedOptionIndex = selectedOptionIndex
+    });
 
     if (_dialogueOptions[selectedOptionIndex].action != DialogueActionType.None)
     {
