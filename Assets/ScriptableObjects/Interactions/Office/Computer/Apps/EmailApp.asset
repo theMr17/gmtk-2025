@@ -15,7 +15,7 @@ MonoBehaviour:
   appName: Email
   description: 
   icon: {fileID: 21300000, guid: f3ebf71a09875dc4381a28044761f079, type: 3}
-  appUIPrefab: {fileID: 0}
+  appContentPrefab: {fileID: 3046233131799954378, guid: b438e5b6a05a8b342ae0761ea18831d3, type: 3}
   isPasswordProtected: 0
   password: 
   showInAppList: 1
