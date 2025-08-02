@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CG003
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "Yeah, I\u2019m here to guard this here facility."
+  - text: "Yeah, I\u2019m guardin\u2019 this here facility."
     textVariants: []
     character: {fileID: 11400000, guid: 1b2d7db140cc0d44cafd7fbda1541a38, type: 2}
     hideCharacterIfConditionMet: 0
@@ -64,8 +64,7 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: "Why do I feel like the individual he\u2019s really here to watch over
-      is me?"
+  - text: Why do I feel like this recovery process is actually the least of his worries?
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0

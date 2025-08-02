@@ -27,6 +27,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -35,7 +37,10 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
-  - text: "Hmm, it\u2019s 2nd February, 2003.\r"
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Hmm, it\u2019s the 2nd of February, 2003.\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -47,6 +52,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -55,6 +62,9 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: "Well, at least now I know what day it is.\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -67,6 +77,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -75,6 +87,9 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: "It\u2019s 2nd February, 2003.\r\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -87,6 +102,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -95,7 +112,10 @@ MonoBehaviour:
       requiredCalViewed: 1
       minTvViewed: -1
       maxTvViewed: -1
-  - text: "It\u2019s\u2026 Hold on, it\u2019s 2nd February?\r\n\r\r"
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "It\u2019s\u2026 Hold on, it\u2019s the 2nd of February?"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -107,6 +127,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -115,6 +137,9 @@ MonoBehaviour:
       requiredCalViewed: 2
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: "That can\u2019t be right, I just finished that day."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -127,6 +152,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -135,6 +162,9 @@ MonoBehaviour:
       requiredCalViewed: 2
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: Maybe the calendar is not working?
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -147,6 +177,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -155,6 +187,9 @@ MonoBehaviour:
       requiredCalViewed: 2
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: 'I tinker with the clock. I try changing the time on it to 23:59.
 
 '
@@ -169,6 +204,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -177,6 +214,9 @@ MonoBehaviour:
       requiredCalViewed: 2
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: After a minute, the date on the clock changes as expected.
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -189,6 +229,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -197,6 +239,9 @@ MonoBehaviour:
       requiredCalViewed: 2
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: "\u2026Then why didn\u2019t it yesterday?\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -209,6 +254,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -217,6 +264,9 @@ MonoBehaviour:
       requiredCalViewed: 2
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: "Just what is going on?\r\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -229,6 +279,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -237,6 +289,9 @@ MonoBehaviour:
       requiredCalViewed: 2
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   - text: "This makes no sense\u2026\r\r\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -249,6 +304,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -257,7 +314,10 @@ MonoBehaviour:
       requiredCalViewed: 3
       minTvViewed: -1
       maxTvViewed: -1
-  - text: "\u2026The calendar has gone back to 2nd February, huh.\r\r\r"
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "\u2026The calendar has gone back to February 2nd, huh.\r\r\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -269,6 +329,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -277,30 +339,13 @@ MonoBehaviour:
       requiredCalViewed: 4
       minTvViewed: -1
       maxTvViewed: -1
-  - text: "\u2026The calendar has gone back to 2nd February, huh.\r\r\r"
-    textVariants: []
-    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
-    hideCharacterIfConditionMet: 0
-    hideCharacterCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: 0
-      minTvViewed: -1
-      maxTvViewed: -1
-    showLineCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: 5
-      minTvViewed: -1
-      maxTvViewed: -1
-  - text: "\u2026This again. 2nd February.\r\r\r"
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "\u2026This again. 2nd of February.\r\r\r"
     textVariants:
     - "No matter what I do, it\u2019s always the 2nd."
-    - "\u20262nd February. Is this calendar here to mock me?"
+    - "\u2026The 2nd of February. Is this calendar here to mock me?"
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
@@ -311,6 +356,8 @@ MonoBehaviour:
       requiredCalViewed: 0
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -319,6 +366,9 @@ MonoBehaviour:
       requiredCalViewed: 6
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   options: []
   nextNode: {fileID: 0}
   showNodeCondition:
@@ -329,3 +379,5 @@ MonoBehaviour:
     requiredCalViewed: -1
     minTvViewed: -1
     maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1

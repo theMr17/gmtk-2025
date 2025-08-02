@@ -25,6 +25,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -33,6 +35,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   - text: "You\u2019re very important to everyone here, you know."
     textVariants: []
@@ -46,6 +50,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -54,10 +60,10 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
-  - text: 'We all want you to make yourself at home here.
-
-'
+  - text: We all want you to make yourself at home.
     textVariants: []
     character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     hideCharacterIfConditionMet: 0
@@ -69,6 +75,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -77,6 +85,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   options: []
   nextNode: {fileID: 11400000, guid: 3402705607162f74ca54842b0fa36de7, type: 2}
@@ -88,3 +98,5 @@ MonoBehaviour:
     requiredCalViewed: -1
     minTvViewed: -1
     maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1

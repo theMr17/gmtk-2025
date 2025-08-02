@@ -25,6 +25,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -33,8 +35,10 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
-  - text: "Ah, well, you\u2019re right, we\u2019re just really focused on curing
+  - text: "Ah, well, you\u2019re right. We\u2019re just really focused on curing
       you. Think of it like a recovery house."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -47,6 +51,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -55,6 +61,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   options: []
   nextNode: {fileID: 11400000, guid: 3402705607162f74ca54842b0fa36de7, type: 2}
@@ -66,3 +74,5 @@ MonoBehaviour:
     requiredCalViewed: -1
     minTvViewed: -1
     maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1

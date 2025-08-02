@@ -39,8 +39,8 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: "They are all labelled \u201CDangerous\u201D. I probably don\u2019t want
-      to open the bags."
+  - text: "They are all labelled \u201CToxic\u201D. I probably don\u2019t want to
+      open the bags."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0

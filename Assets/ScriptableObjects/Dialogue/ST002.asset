@@ -25,6 +25,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -33,6 +35,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   - text: "\u2026It\u2019s morning."
     textVariants: []
@@ -46,6 +50,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -54,8 +60,10 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
-  - text: This room, I still do not like it.
+  - text: "This room\u2026 I still do not like it."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -67,6 +75,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -75,6 +85,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   - text: "I have the vague feeling something\u2026 changed? "
     textVariants: []
@@ -88,6 +100,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -96,6 +110,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   options: []
   nextNode: {fileID: 11400000, guid: a016d168fc77b6a4db1f4a826e2c4229, type: 2}
@@ -107,3 +123,5 @@ MonoBehaviour:
     requiredCalViewed: -1
     minTvViewed: -1
     maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1
