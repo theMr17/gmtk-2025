@@ -109,4 +109,5 @@ public enum DialogueActionType
   EndDay,
   EnableFreeRoam,
   DisableFreeRoam,
+  SendToRoom,
 }

@@ -243,6 +243,11 @@ public class DialogueManager : MonoBehaviour
       case DialogueActionType.DisableFreeRoam:
         GameManager.Instance.gameState.FreeRoam = false;
         break;
+      case DialogueActionType.SendToRoom:
+        GameManager.Instance.SendPlayerToRoom();
+        break;
+      default:
+        break;
     }
   }
 }

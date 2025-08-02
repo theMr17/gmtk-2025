@@ -128,19 +128,6 @@ MonoBehaviour:
       maxTvViewed: -1
       minLabAccidents: -1
       maxLabAccidents: -1
-  - option: What is this facility?
-    nextNode: {fileID: 11400000, guid: f922d3e75ba639e42bd18555715bb7bc, type: 2}
-    action: 0
-    showOptionCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-      minLabAccidents: -1
-      maxLabAccidents: -1
   - option: "There\u2019s an accident in the Lab!"
     nextNode: {fileID: 11400000, guid: 3e1e1dbee136fb14aa3cedb097829183, type: 2}
     action: 0

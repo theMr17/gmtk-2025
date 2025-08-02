@@ -70,8 +70,14 @@ public class GameManager : MonoBehaviour
     }
   }
 
-  private void OnAnimatorIK(int layerIndex)
+  private void OnDestroy()
   {
     DayTimeManager.Instance.OnHourChanged -= DayTimeManager_OnHourChanged;
+  }
+
+  public void SendPlayerToRoom()
+  {
+    gameState.FreeRoam = false;
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
   }
 }
