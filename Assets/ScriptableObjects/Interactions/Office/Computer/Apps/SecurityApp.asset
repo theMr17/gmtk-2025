@@ -15,7 +15,7 @@ MonoBehaviour:
   appName: Security Schedule
   description: 
   icon: {fileID: 21300000, guid: b1ecfe15e04f4994a955b870a7566fdb, type: 3}
-  appUIPrefab: {fileID: 0}
+  appContentPrefab: {fileID: 5862644236500861599, guid: 93ae5987c8ac8884b9d967b9de1cda14, type: 3}
   isPasswordProtected: 1
   password: 1234
   showInAppList: 1
