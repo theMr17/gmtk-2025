@@ -126,6 +126,14 @@ public class DayTimeManager : MonoBehaviour
         if (gameState.TvViewed is 1 or 3)
             gameState.TvViewed++;
 
+        gameState.LabAccident = 0;
+        gameState.LadderVent = 0;
+        gameState.SelOrg = 0;
+        gameState.SelMove = 0;
+        gameState.EnteredBox = 0;
+        gameState.StoredBox = 0;
+        gameState.OrderCargo = 0;
+
         // Fire OnDayPassed event for any listeners (UI, quest systems, etc.)
         OnDayPassed?.Invoke(this, EventArgs.Empty);
 

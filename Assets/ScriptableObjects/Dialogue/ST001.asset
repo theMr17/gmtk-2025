@@ -113,7 +113,7 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: " I don\u2019t remember if I\u2019m supposed to be here. Actually, who\u2026
+  - text: " I don\u2019t remember if I\u2019m supposed to be here. Actually, who...
       am I?\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
@@ -140,7 +140,7 @@ MonoBehaviour:
       maxLabAccidents: -1
     action: 0
   - text: "My head\u2026 it\u2019s empty. I don\u2019t even remember a name or a
-      past.\r\n"
+      past.\r"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: ' Is this amnesia?'
+  - text: Is this amnesia?
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -215,9 +215,7 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: 'As I sit up, an unknown man enters the room.
-
-'
+  - text: As I sit up, an unknown man enters the room.
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
