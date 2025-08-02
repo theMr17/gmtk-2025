@@ -13,7 +13,108 @@ MonoBehaviour:
   m_Name: DLWrong
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: Suddenly, I hear the sound of footsteps approaching.
+  - text: "I hear the courier pick up a box\u2026 not the one I\u2019m in."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: Humming, the two exit the storage.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Damn, this isn\u2019t the box they\u2019re after."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "If only I could find out which box they\u2019re taking out of the facility."
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Time to get out of here before someone discovers I\u2019ve tampered with
+      the boxes."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DLFound
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: Suddenly, I hear the sound of footsteps approaching.
+  - text: "After a few minutes\u2026"
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -38,8 +38,208 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
+  - text: One of the Couriers opens my box. I hear his voice boom out right above.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Hey! Something\u2019s not right about this box."
+    textVariants: []
+    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: 'Huh, how do you mean? '
+    textVariants: []
+    character: {fileID: 11400000, guid: 0852dd15ecc01004a9316917d049d652, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "There shouldn\u2019t be a packet in this one."
+    textVariants: []
+    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Strange. That\u2019s never happened before."
+    textVariants: []
+    character: {fileID: 11400000, guid: 0852dd15ecc01004a9316917d049d652, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: What do we do?
+    textVariants: []
+    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: 'According to protocol, we should get the Warden immediately. '
+    textVariants: []
+    character: {fileID: 11400000, guid: 0852dd15ecc01004a9316917d049d652, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Let\u2019s go."
+    textVariants: []
+    character: {fileID: 11400000, guid: 0852dd15ecc01004a9316917d049d652, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   options: []
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: fed5626e7224cd5469b12be91a4e6796, type: 2}
   showNodeCondition:
     minDay: -1
     maxDay: -1

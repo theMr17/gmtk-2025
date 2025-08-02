@@ -38,8 +38,185 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
+  - text: Then, a pair of chatting voices enters the room.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: Man, they really know how to rush us rank and file, huh?
+    textVariants: []
+    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "I would have still been sleeping if they didn\u2019t suddenly re-issue
+      this cancelled order."
+    textVariants: []
+    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Get over it. We\u2019re getting paid well to deal with this."
+    textVariants: []
+    character: {fileID: 11400000, guid: 0852dd15ecc01004a9316917d049d652, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: True, true.
+    textVariants: []
+    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: "Let\u2019s get to work. Inspections first."
+    textVariants: []
+    character: {fileID: 11400000, guid: 0852dd15ecc01004a9316917d049d652, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
+  - text: The two men start shuffling around the boxes, checking and examining different
+      ones.
+    textVariants: []
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    hideCharacterIfConditionMet: 0
+    hideCharacterCondition:
+      minDay: 0
+      maxDay: 0
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: 0
+      minTvViewed: 0
+      maxTvViewed: 0
+      minLabAccidents: 0
+      maxLabAccidents: 0
+    showLineCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+    action: 0
   options: []
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: b3724032e320476479ed9ad32613a6f5, type: 2}
   showNodeCondition:
     minDay: -1
     maxDay: -1
