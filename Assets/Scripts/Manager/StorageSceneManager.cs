@@ -20,6 +20,17 @@ public class StorageSceneManager : MonoBehaviour
   [SerializeField] private DialogueNodeSo alreadyEnteredBoxesDialogueNode;
   [SerializeField] private DialogueNodeSo afterTimerBoxesDialogueNode;
 
+  [SerializeField] private DialogueNodeSo boxInteractionDialogueNode;
+  [SerializeField] private DialogueNodeSo bx001DialogueNode;
+  [SerializeField] private DialogueNodeSo bxEmptyDialogueNode;
+  [SerializeField] private DialogueNodeSo bxFullDialogueNode;
+  [SerializeField] private DialogueNodeSo bxHalfDialogueNode;
+  [SerializeField] private DialogueNodeSo bxLeaveDialogueNode;
+
+  [SerializeField] private DialogueNodeSo bxMoveDialogueNode;
+  [SerializeField] private DialogueNodeSo bxMoveFullDialogueNode;
+  [SerializeField] private DialogueNodeSo bxMoveHalfDialogueNode;
+
   private void Awake()
   {
     Instance = this;
@@ -46,6 +57,7 @@ public class StorageSceneManager : MonoBehaviour
   private void HandleStaffRecordsInteraction()
   {
     // Handle staff records interaction
+    GameManager.Instance.TriggerDialogue(staffRecordsObject.dialogueNode);
   }
 
   private void HandleVentInteraction()
@@ -88,7 +100,7 @@ public class StorageSceneManager : MonoBehaviour
 
   private void StartBoxMiniGame()
   {
-    Debug.Log("Starting box mini-game...");
+    GameManager.Instance.TriggerDialogue(boxInteractionDialogueNode);
   }
 
   private void HandleExitAreaInteraction()

@@ -27,7 +27,7 @@ MonoBehaviour:
   LearnMeeting: 0
   SelOrg: 0
   SelMove: 0
-  EnteredBox: 1
+  EnteredBox: 0
   StoredBox: 0
   MeetingWitnessed: 0
   OrderCargo: 0

@@ -2171,6 +2171,15 @@ MonoBehaviour:
   pastTimeVentDialogueNode: {fileID: 11400000, guid: 26930af47f2470045935d0b0ddb07308, type: 2}
   alreadyEnteredBoxesDialogueNode: {fileID: 11400000, guid: d2a21a02a25e31044b15875be4ce84d3, type: 2}
   afterTimerBoxesDialogueNode: {fileID: 11400000, guid: d6ab832b017bb644ea0dd1feeda3f18c, type: 2}
+  boxInteractionDialogueNode: {fileID: 11400000, guid: bd6e9eda6e408da4b867a02d566ddb35, type: 2}
+  bx001DialogueNode: {fileID: 11400000, guid: 186de4e8f8440a144b08f1eb00508f22, type: 2}
+  bxEmptyDialogueNode: {fileID: 11400000, guid: 8a4bdd9aecbb9dd459ea9f7a6ae376ad, type: 2}
+  bxFullDialogueNode: {fileID: 11400000, guid: b23b9ba38286fbe499d224a557d785b5, type: 2}
+  bxHalfDialogueNode: {fileID: 11400000, guid: bf8215538291f7543803e0f62ac89fa2, type: 2}
+  bxLeaveDialogueNode: {fileID: 11400000, guid: 05aaf9ef84b58334185275103ce3ade6, type: 2}
+  bxMoveDialogueNode: {fileID: 11400000, guid: c7f0ffb439a8e5d4992dbbd36afc9386, type: 2}
+  bxMoveFullDialogueNode: {fileID: 11400000, guid: 4b89cb014c73af14e89ea29d472fd9e1, type: 2}
+  bxMoveHalfDialogueNode: {fileID: 11400000, guid: f272bdba1f1e1614487b461c120b10e1, type: 2}
 --- !u!4 &2097615129
 Transform:
   m_ObjectHideFlags: 0
