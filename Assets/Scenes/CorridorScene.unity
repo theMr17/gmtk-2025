@@ -1349,6 +1349,9 @@ MonoBehaviour:
   s04RoomDoorObject:
     button: {fileID: 278630082}
     dialogueNode: {fileID: 0}
+  storageDoorObject:
+    button: {fileID: 1281897698}
+    dialogueNode: {fileID: 0}
   guardTimeRange1:
     StartHour: 8
     StartMinute: 0

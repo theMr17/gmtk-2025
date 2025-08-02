@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 public class CorridorSceneManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class CorridorSceneManager : MonoBehaviour
   [SerializeField] private InteractableObject officeDoorObject;
   [SerializeField] private InteractableObject guardObject;
   [SerializeField] private InteractableObject s04RoomDoorObject;
+  [SerializeField] private InteractableObject storageDoorObject;
 
   [Header("Time Ranges")]
   [SerializeField] private TimeRange guardTimeRange1 = new TimeRange { StartHour = 8, StartMinute = 0, EndHour = 10, EndMinute = 0 };
@@ -39,6 +41,7 @@ public class CorridorSceneManager : MonoBehaviour
     guardObject.button.onClick.AddListener(() => HandleGuardInteraction());
     entranceHallDoorObject.button.onClick.AddListener(() => HandleEntranceHallDoorInteraction());
     s04RoomDoorObject.button.onClick.AddListener(() => HandleS04RoomDoorInteraction());
+    storageDoorObject.button.onClick.AddListener(() => HandleStorageDoorInteraction());
   }
 
   private void Update()
@@ -79,7 +82,7 @@ public class CorridorSceneManager : MonoBehaviour
     }
     else
     {
-      // Enter Lab
+      SceneLoader.Instance.LoadScene(SceneLoader.Scene.LabScene);
     }
   }
 
@@ -91,7 +94,7 @@ public class CorridorSceneManager : MonoBehaviour
     }
     else
     {
-      // Enter Office
+      SceneLoader.Instance.LoadScene(SceneLoader.Scene.OfficeScene);
     }
   }
 
@@ -113,6 +116,11 @@ public class CorridorSceneManager : MonoBehaviour
   private void HandleS04RoomDoorInteraction()
   {
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
+  }
+
+  private void HandleStorageDoorInteraction()
+  {
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.StorageScene);
   }
 
   private void HandleGuardInteraction()

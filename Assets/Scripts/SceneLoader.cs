@@ -14,6 +14,10 @@ public class SceneLoader : MonoBehaviour
     S04RoomScene,
     CorridorScene,
     EntranceHallScene,
+    OfficeScene,
+    StorageScene,
+    VentScene,
+    LabScene,
   }
 
   private void Awake()
