@@ -8,6 +8,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   [SerializeField] private InteractableObject coffeeMachineObject;
   [SerializeField] private InteractableObject bookShelfObject;
+  [SerializeField] private InteractableObject exitAreaObject;
 
   [SerializeField] private TimeRange wardenTimeRange = new TimeRange { StartHour = 11, StartMinute = 0, EndHour = 16, EndMinute = 0 };
 
@@ -20,6 +21,7 @@ public class OfficeSceneManager : MonoBehaviour
   {
     coffeeMachineObject.button.onClick.AddListener(() => HandleCoffeeMachineInteraction());
     bookShelfObject.button.onClick.AddListener(() => HandleBookShelfInteraction());
+    exitAreaObject.button.onClick.AddListener(() => HandleExitAreaInteraction());
   }
 
   private void Update()
@@ -39,6 +41,11 @@ public class OfficeSceneManager : MonoBehaviour
   private void HandleBookShelfInteraction()
   {
     GameManager.Instance.TriggerDialogue(bookShelfObject.dialogueNode);
+  }
+
+  private void HandleExitAreaInteraction()
+  {
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
   }
 
   public bool IsWardenPresent()
