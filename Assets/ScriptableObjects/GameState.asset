@@ -23,7 +23,7 @@ MonoBehaviour:
   OfficeViewed: 0
   LabViewed: 0
   VentViewed: 0
-  LadderVent: 1
+  LadderVent: 0
   LearnMeeting: 0
   SelOrg: 0
   SelMove: 0
