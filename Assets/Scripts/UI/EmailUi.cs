@@ -50,6 +50,7 @@ public class EmailUi : MonoBehaviour
         if (emails.Length == 0) return;
 
         currentEmailIndex = (currentEmailIndex + 1) % emails.Length;
+        ShowEmail(currentEmailIndex);
     }
 
     private void ShowPreviousEmail()
