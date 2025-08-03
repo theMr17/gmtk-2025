@@ -16,18 +16,18 @@ MonoBehaviour:
   CalViewed: 0
   HallViewed: 0
   TvViewed: 0
-  FreeRoam: 0
+  FreeRoam: 1
   CorViewed: 0
   LabAccident: 0
-  StorViewed: 0
+  StorViewed: 1
   OfficeViewed: 0
   LabViewed: 0
   VentViewed: 0
-  LadderVent: 0
+  LadderVent: 1
   LearnMeeting: 0
   SelOrg: 0
   SelMove: 0
   EnteredBox: 0
   StoredBox: 0
   MeetingWitnessed: 0
-  OrderCargo: 1
+  OrderCargo: 0

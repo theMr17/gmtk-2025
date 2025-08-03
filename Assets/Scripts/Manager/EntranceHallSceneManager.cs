@@ -51,11 +51,13 @@ public class EntranceHallSceneManager : MonoBehaviour
 
     private void HandleVentInteraction()
     {
+        SoundManager.PlaySound(SoundType.Vent);
         GameManager.Instance.TriggerDialogue(ventObject.dialogueNode);
     }
 
     private void HandleExitAreaInteraction()
     {
+        SoundManager.PlaySound(SoundType.Door);
         SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
 
