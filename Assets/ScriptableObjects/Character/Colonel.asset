@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Colonel
   m_EditorClassIdentifier: 
   characterName: Colonel
-  characterBust: {fileID: 21300000, guid: 17a3bfdffe38f264f8c300a2ed690820, type: 3}
+  characterBust: {fileID: -6325699825353030820, guid: fe848054aed36474fb5aeaf58d1080b7, type: 3}

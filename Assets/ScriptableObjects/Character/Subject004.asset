@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Subject004
   m_EditorClassIdentifier: 
   characterName: Subject 004
-  characterBust: {fileID: 21300000, guid: fdc68b5d2161d3245a5cd14fe8097761, type: 3}
+  characterBust: {fileID: -2212936543457574465, guid: fe848054aed36474fb5aeaf58d1080b7, type: 3}
