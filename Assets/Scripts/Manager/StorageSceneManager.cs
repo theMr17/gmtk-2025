@@ -65,6 +65,7 @@ public class StorageSceneManager : MonoBehaviour
   private void HandleStaffRecordsInteraction()
   {
     // Handle staff records interaction
+    SoundManager.PlaySound(SoundType.PageTurn);
     GameManager.Instance.TriggerDialogue(staffRecordsObject.dialogueNode);
   }
 
@@ -80,6 +81,7 @@ public class StorageSceneManager : MonoBehaviour
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Vent);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.VentScene);
     }
   }
@@ -87,11 +89,13 @@ public class StorageSceneManager : MonoBehaviour
   private void HandleLadderInteraction()
   {
     GameManager.Instance.TriggerDialogue(LadderObject.dialogueNode);
+    SoundManager.PlaySound(SoundType.LadderMove);
     GameManager.Instance.gameState.LadderVent++;
   }
 
   private void HandleExitAreaInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
   }
 
@@ -99,6 +103,7 @@ public class StorageSceneManager : MonoBehaviour
   {
     if (GameManager.Instance.gameState.EnteredBox != 0)
     {
+      SoundManager.PlaySound(SoundType.BoxTaken);
       GameManager.Instance.TriggerDialogue(alreadyEnteredBoxesDialogueNode);
     }
     else if (DayTimeManager.Instance.Hour >= 19 && DayTimeManager.Instance.Minute >= 45)
@@ -210,6 +215,7 @@ public class StorageSceneManager : MonoBehaviour
 
       if (e.selectedOptionIndex == 0) // Enter box
       {
+        SoundManager.PlaySound(SoundType.BoxIn);
         GameManager.Instance.gameState.EnteredBox = GameManager.Instance.gameState.SelOrg;
         GameManager.Instance.gameState.StoredBox = GameManager.Instance.gameState.SelMove;
         GameManager.Instance.gameState.SelOrg = 0;
@@ -234,6 +240,7 @@ public class StorageSceneManager : MonoBehaviour
 
   private void EnterBox()
   {
+    SoundManager.PlaySound(SoundType.BoxIn);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.BoxScene);
   }
 

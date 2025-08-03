@@ -62,10 +62,12 @@ public class CorridorSceneManager : MonoBehaviour
 
     if (IsGuardPresent())
     {
+      SoundManager.PlaySound(SoundType.PageTurn);
       GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardPresent);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.PageTurn);
       GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardAbsent);
     }
   }
@@ -74,6 +76,7 @@ public class CorridorSceneManager : MonoBehaviour
   {
     if (IsGuardPresent())
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(labDoorDialogueNodeGuardPresent);
     }
     else if (GameManager.Instance.gameState.LabAccident == 2)
@@ -82,6 +85,7 @@ public class CorridorSceneManager : MonoBehaviour
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.LabScene);
     }
   }
@@ -90,10 +94,12 @@ public class CorridorSceneManager : MonoBehaviour
   {
     if (IsGuardPresent())
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(officeDoorObject.dialogueNode);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.OfficeScene);
     }
   }
@@ -105,21 +111,25 @@ public class CorridorSceneManager : MonoBehaviour
     if (DayTimeManager.Instance.Hour == 15 && DayTimeManager.Instance.Minute >= 45
         && DayTimeManager.Instance.Hour == 16 && DayTimeManager.Instance.Minute <= 45)
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(entranceHallDoorObject.dialogueNode);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.EntranceHallScene);
     }
   }
 
   private void HandleS04RoomDoorInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
   }
 
   private void HandleStorageDoorInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.StorageScene);
   }
 
