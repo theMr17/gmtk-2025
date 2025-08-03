@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da93eefc073e8bc4199d687d42b82c2f
+guid: e51fdea06f5b3b448b571908908e0374
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1718463779068046594
-    second: computer-bg_0
+      213: -3812589305369751418
+    second: lab-pc-bg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: computer-bg_0
+      name: lab-pc-bg_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 739
-        height: 415
+        width: 2304
+        height: 1296
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20de9b6c3b539d710800000000000000
-      internalID: 1718463779068046594
+      spriteID: 6809bfa0a36f61bc0800000000000000
+      internalID: -3812589305369751418
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      computer-bg_0: 1718463779068046594
+      lab-pc-bg_0: -3812589305369751418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

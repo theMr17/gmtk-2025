@@ -2035,14 +2035,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComputerCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 648573827353028094, guid: 23378520cbcf4db4a91dd0ddfbc6c974, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2142396023673239153, guid: 23378520cbcf4db4a91dd0ddfbc6c974, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5795273833028439324, guid: 23378520cbcf4db4a91dd0ddfbc6c974, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2123,18 +2115,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6601978526289390627, guid: 23378520cbcf4db4a91dd0ddfbc6c974, type: 3}
-      propertyPath: apps.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6601978526289390627, guid: 23378520cbcf4db4a91dd0ddfbc6c974, type: 3}
-      propertyPath: 'apps.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ba9257a1260b90e4da8ac00033d7547e, type: 2}
-    - target: {fileID: 6601978526289390627, guid: 23378520cbcf4db4a91dd0ddfbc6c974, type: 3}
-      propertyPath: 'apps.Array.data[4]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e3f7d9c1ea8f4b74b831fb4e5fb22735, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
