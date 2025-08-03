@@ -40,6 +40,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   private void HandleComputerInteraction()
   {
+    SoundManager.PlaySound(SoundType.ComputerOn);
     OnComputerOpened?.Invoke(this, EventArgs.Empty);
   }
 
@@ -55,6 +56,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   private void HandleExitAreaInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
   }
 
