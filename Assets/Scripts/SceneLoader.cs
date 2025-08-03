@@ -20,6 +20,7 @@ public class SceneLoader : MonoBehaviour
     BoxScene,
     VentScene,
     LabScene,
+    GameEndScene
   }
 
   private void Awake()

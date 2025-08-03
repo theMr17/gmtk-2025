@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88317aac2c94d9e418bddc2e1e1ebee8, type: 3}
+  m_Name: Log13
+  m_EditorClassIdentifier: 
+  logEntry: 15/09/2002
+  author: Dr. L Yuen
+  facility: J08
+  experimentSubject: 004
+  content: "First confirmed loop: Subject 004 described guard\u2019s sequence before
+    it occurred. Said \u201CI saw this\u201D repeatedly. Logged for further review.\r"

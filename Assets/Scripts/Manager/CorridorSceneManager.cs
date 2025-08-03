@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class CorridorSceneManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class CorridorSceneManager : MonoBehaviour
   public static CorridorSceneManager Instance { get; private set; }
 
   [SerializeField] private DialogueNodeSo corridorIntroDialogueNode;
+
+  [SerializeField] private Image slipImage;
+  [SerializeField] private Image guardImage;
 
   [SerializeField] private InteractableObject slipObject;
   [SerializeField] private DialogueNodeSo slipDialogueNodeGuardPresent;
@@ -42,11 +46,19 @@ public class CorridorSceneManager : MonoBehaviour
     entranceHallDoorObject.button.onClick.AddListener(() => HandleEntranceHallDoorInteraction());
     s04RoomDoorObject.button.onClick.AddListener(() => HandleS04RoomDoorInteraction());
     storageDoorObject.button.onClick.AddListener(() => HandleStorageDoorInteraction());
+
+    // disable slip
+    slipImage.gameObject.SetActive(false);
+    DialogueManager.Instance.OnDialogueEnd += HideSlipImage;
+
+    guardImage.gameObject.SetActive(false);
   }
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.CorViewed < 1)
+    guardImage.gameObject.SetActive(IsGuardPresent());
+
+    if (GameManager.Instance.gameState.CorViewed < 1)
     {
       GameManager.Instance.gameState.CorViewed++;
       GameManager.Instance.TriggerDialogue(corridorIntroDialogueNode);
@@ -62,10 +74,13 @@ public class CorridorSceneManager : MonoBehaviour
 
     if (IsGuardPresent())
     {
+      SoundManager.PlaySound(SoundType.PageTurn);
       GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardPresent);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.PageTurn);
+      slipImage.gameObject.SetActive(true);
       GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardAbsent);
     }
   }
@@ -74,6 +89,7 @@ public class CorridorSceneManager : MonoBehaviour
   {
     if (IsGuardPresent())
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(labDoorDialogueNodeGuardPresent);
     }
     else if (GameManager.Instance.gameState.LabAccident == 2)
@@ -82,6 +98,7 @@ public class CorridorSceneManager : MonoBehaviour
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.LabScene);
     }
   }
@@ -90,10 +107,12 @@ public class CorridorSceneManager : MonoBehaviour
   {
     if (IsGuardPresent())
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(officeDoorObject.dialogueNode);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.OfficeScene);
     }
   }
@@ -105,21 +124,25 @@ public class CorridorSceneManager : MonoBehaviour
     if (DayTimeManager.Instance.Hour == 15 && DayTimeManager.Instance.Minute >= 45
         && DayTimeManager.Instance.Hour == 16 && DayTimeManager.Instance.Minute <= 45)
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(entranceHallDoorObject.dialogueNode);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.EntranceHallScene);
     }
   }
 
   private void HandleS04RoomDoorInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
   }
 
   private void HandleStorageDoorInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.StorageScene);
   }
 
@@ -149,5 +172,17 @@ public class CorridorSceneManager : MonoBehaviour
     int minute = DayTimeManager.Instance.Minute;
 
     return slipTimeRange.Includes(hour, minute);
+  }
+
+  private void OnDestroy()
+  {
+    if (DialogueManager.Instance != null)
+      DialogueManager.Instance.OnDialogueEnd -= HideSlipImage;
+  }
+
+  private void HideSlipImage(object sender, System.EventArgs e)
+  {
+    if (slipImage != null)
+      slipImage.gameObject.SetActive(false);
   }
 }

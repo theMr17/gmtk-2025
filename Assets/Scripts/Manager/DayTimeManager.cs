@@ -97,6 +97,15 @@ public class DayTimeManager : MonoBehaviour
             _lastHour = currentHour;
             OnHourChanged?.Invoke(this, new HourChangedEventArgs { Hour = currentHour });
         }
+
+        // Hardcoded checks for lab accident
+        if (GameManager.Instance.gameState.LabAccident == 1)
+        {
+            if ((currentHour is 12 or 15 or 18) && currentMinute == 0)
+            {
+                GameManager.Instance.gameState.LabAccident = 2; // Trigger lab accident
+            }
+        }
     }
 
     public void PauseTime() => _isPaused = true;

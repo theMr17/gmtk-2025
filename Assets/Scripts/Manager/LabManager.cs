@@ -36,7 +36,7 @@ public class LabManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.LabViewed < 1)
+        if (GameManager.Instance.gameState.LabViewed < 1)
         {
             GameManager.Instance.gameState.LabViewed++;
             GameManager.Instance.TriggerDialogue(labIntroDialogueNode);
@@ -45,11 +45,13 @@ public class LabManager : MonoBehaviour
 
     private void HandleComputerInteraction()
     {
+        SoundManager.PlaySound(SoundType.ComputerOn);
         OnComputerOpened?.Invoke(this, EventArgs.Empty);
     }
 
     private void HandleExitAreaInteraction()
     {
+        SoundManager.PlaySound(SoundType.Door);
         SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
 
@@ -71,10 +73,24 @@ public class LabManager : MonoBehaviour
     private void HandleChemicalInteraction()
     {
         GameManager.Instance.TriggerDialogue(chemicalsObject.dialogueNode);
-    }
 
+        EventHandler onChemicalDialogEnd = null;
+        onChemicalDialogEnd = (sender, e) =>
+        {
+            DialogueManager.Instance.OnDialogueEnd -= onChemicalDialogEnd;
+
+            // Check if the player chose the 'Mix the chemicals' option (assumed CH001 is triggered)
+            if (GameManager.Instance.gameState.LabAccident == 0)
+            {
+                GameManager.Instance.gameState.LabAccident = 1;
+            }
+        };
+
+        DialogueManager.Instance.OnDialogueEnd += onChemicalDialogEnd;
+    }
     private void HandleSpecimenFridgeInteraction()
     {
+        SoundManager.PlaySound(SoundType.DoorLocked);
         GameManager.Instance.TriggerDialogue(specimenFridgeObject.dialogueNode);
     }
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88317aac2c94d9e418bddc2e1e1ebee8, type: 3}
+  m_Name: Log08
+  m_EditorClassIdentifier: 
+  logEntry: 23/3/2002
+  author: Lt. H. Gallagher
+  facility: B43
+  experimentSubject: 002
+  content: "Catastrophic containment failure. Chemical spill during stimulation trial
+    caused massive explosion. Subject 002 presumed deceased. 27 Staff casualties
+    including Lead Researcher Dr. Emil Ivanova. Facility compromised. Survivors evacuated
+    to E65. Dr. Li Yuen assigned as new Project Lead.\r"

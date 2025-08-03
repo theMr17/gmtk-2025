@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88317aac2c94d9e418bddc2e1e1ebee8, type: 3}
+  m_Name: Log07
+  m_EditorClassIdentifier: 
+  logEntry: 05/02/2002
+  author: Dr. E. Ivanova
+  facility: B43
+  experimentSubject: 002
+  content: "Breakthrough: Subject 002 successfully described alternate outcome of
+    controlled test scenario. Appears to have retained decision pathway not taken.
+    Promising, but risks remain.\r"

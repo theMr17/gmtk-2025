@@ -31,21 +31,7 @@ public class GameManager : MonoBehaviour
   private void Start()
   {
     DayTimeManager.Instance.OnHourChanged += DayTimeManager_OnHourChanged;
-  }
-
-  private void Update()
-  {
-    if (Input.GetKeyDown(KeyCode.D))
-    {
-      if (gameState.Day <= 2)
-      {
-        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[gameState.Day - 1] });
-      }
-      else
-      {
-        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[2] });
-      }
-    }
+    DayTimeManager.Instance.OnMinuteChanged += DayTimeManager_OnMinuteChanged;
   }
 
   public void TriggerDialogue(DialogueNodeSo dialogueNode)
@@ -70,9 +56,25 @@ public class GameManager : MonoBehaviour
     }
   }
 
+  private void DayTimeManager_OnMinuteChanged(object sender, DayTimeManager.TimeChangedEventArgs e)
+  {
+    if (e.Hour == 6 && e.Minute == 2)
+    {
+      if (gameState.Day <= 2)
+      {
+        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[gameState.Day - 1] });
+      }
+      else
+      {
+        OnDialogueTriggered?.Invoke(this, new DialogueTriggeredEventArgs { dialogueNode = startDialogueNodes[2] });
+      }
+    }
+  }
+
   private void OnDestroy()
   {
     DayTimeManager.Instance.OnHourChanged -= DayTimeManager_OnHourChanged;
+    DayTimeManager.Instance.OnMinuteChanged -= DayTimeManager_OnMinuteChanged;
   }
 
   public void SendPlayerToRoom()

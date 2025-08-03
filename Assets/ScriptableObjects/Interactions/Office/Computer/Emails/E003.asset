@@ -17,11 +17,9 @@ MonoBehaviour:
   recipient: 
   content: 'Wilkes,
 
-    
 
     Experiment #0726 has resulted in failure.
 
-    
 
     Dispose
     of Fridge 2.
@@ -31,18 +29,14 @@ MonoBehaviour:
     Do not eat the Strawberry
     Jam in the third left shelf. Pursue alternative means of sustenance.
 
-    
 
     Do
     not throw the Strawberry Jam. It will come for you.
 
-    
 
     Keep Learning,
 
-    Li.
-
-'
+    Li.'
   date: 30th Jan at 04:06
   isRead: 1
   isPasswordProtected: 0

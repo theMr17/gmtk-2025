@@ -31,7 +31,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.OfficeViewed < 1)
+    if (GameManager.Instance.gameState.OfficeViewed < 1)
     {
       GameManager.Instance.gameState.OfficeViewed++;
       GameManager.Instance.TriggerDialogue(officeIntroDialogueNode);
@@ -40,6 +40,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   private void HandleComputerInteraction()
   {
+    SoundManager.PlaySound(SoundType.ComputerOn);
     OnComputerOpened?.Invoke(this, EventArgs.Empty);
   }
 
@@ -55,6 +56,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   private void HandleExitAreaInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
   }
 

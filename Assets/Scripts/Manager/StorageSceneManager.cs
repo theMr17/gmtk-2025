@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StorageSceneManager : MonoBehaviour
 {
   public static StorageSceneManager Instance { get; private set; }
 
-  [SerializeField] private DialogueNodeSo storageIntroDialogueNode;
+  [SerializeField] private Sprite ladderOnVentStorageRoom;
+  [SerializeField] private Canvas canvas;
 
+  [SerializeField] private DialogueNodeSo storageIntroDialogueNode;
 
   [SerializeField] private InteractableObject staffRecordsObject;
   [SerializeField] private InteractableObject ventObject;
@@ -32,6 +35,8 @@ public class StorageSceneManager : MonoBehaviour
   [SerializeField] private DialogueNodeSo bxMoveHalfFalseDialogueNode;
   [SerializeField] private DialogueNodeSo bxMoveEmptyDialogueNode;
 
+  [SerializeField] private GameObject recordsUi;
+
   public event EventHandler<OnBoxSelectionStartedEventArgs> OnBoxSelectionStarted;
   public class OnBoxSelectionStartedEventArgs : EventArgs
   {
@@ -55,17 +60,24 @@ public class StorageSceneManager : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.StorViewed < 1)
+    Debug.Log(GameManager.Instance.gameState.LadderVent);
+    if (GameManager.Instance.gameState.StorViewed < 1)
     {
       GameManager.Instance.gameState.StorViewed++;
       GameManager.Instance.TriggerDialogue(storageIntroDialogueNode);
+    }
+    if (GameManager.Instance.gameState.LadderVent > 0 &&
+    canvas.GetComponent<Image>().sprite != ladderOnVentStorageRoom)
+    {
+      canvas.GetComponent<Image>().sprite = ladderOnVentStorageRoom;
     }
   }
 
   private void HandleStaffRecordsInteraction()
   {
     // Handle staff records interaction
-    GameManager.Instance.TriggerDialogue(staffRecordsObject.dialogueNode);
+    SoundManager.PlaySound(SoundType.PageTurn);
+    recordsUi.SetActive(true);
   }
 
   private void HandleVentInteraction()
@@ -80,18 +92,22 @@ public class StorageSceneManager : MonoBehaviour
     }
     else
     {
+      SoundManager.PlaySound(SoundType.Vent);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.VentScene);
     }
   }
 
   private void HandleLadderInteraction()
   {
+    if (GameManager.Instance.gameState.LadderVent > 0) return;
     GameManager.Instance.TriggerDialogue(LadderObject.dialogueNode);
+    SoundManager.PlaySound(SoundType.LadderMove);
     GameManager.Instance.gameState.LadderVent++;
   }
 
   private void HandleExitAreaInteraction()
   {
+    SoundManager.PlaySound(SoundType.Door);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
   }
 
@@ -99,6 +115,7 @@ public class StorageSceneManager : MonoBehaviour
   {
     if (GameManager.Instance.gameState.EnteredBox != 0)
     {
+      SoundManager.PlaySound(SoundType.BoxTaken);
       GameManager.Instance.TriggerDialogue(alreadyEnteredBoxesDialogueNode);
     }
     else if (DayTimeManager.Instance.Hour >= 19 && DayTimeManager.Instance.Minute >= 45)
@@ -210,6 +227,7 @@ public class StorageSceneManager : MonoBehaviour
 
       if (e.selectedOptionIndex == 0) // Enter box
       {
+        SoundManager.PlaySound(SoundType.BoxIn);
         GameManager.Instance.gameState.EnteredBox = GameManager.Instance.gameState.SelOrg;
         GameManager.Instance.gameState.StoredBox = GameManager.Instance.gameState.SelMove;
         GameManager.Instance.gameState.SelOrg = 0;
@@ -234,6 +252,7 @@ public class StorageSceneManager : MonoBehaviour
 
   private void EnterBox()
   {
+    SoundManager.PlaySound(SoundType.BoxIn);
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.BoxScene);
   }
 

@@ -25,6 +25,8 @@ public class S04RoomSceneManager : MonoBehaviour
     tvObject.button.onClick.AddListener(() => HandleTvInteraction());
     musicPlayerObject.button.onClick.AddListener(() => HandleMusicPlayerInteraction());
     booksObject.button.onClick.AddListener(() => HandleBooksInteraction());
+
+    SoundManager.PlaySound(SoundType.HalfMystery, true);
   }
 
   private void HandleBedInteraction()
@@ -34,6 +36,7 @@ public class S04RoomSceneManager : MonoBehaviour
 
   private void HandleCalendarInteraction()
   {
+    SoundManager.PlaySound(SoundType.PageTurn);
     GameManager.Instance.TriggerDialogue(calendarObject.dialogueNode);
 
     EventHandler onDialogueEndHandler = null;
@@ -70,10 +73,12 @@ public class S04RoomSceneManager : MonoBehaviour
   {
     if (GameManager.Instance.gameState.FreeRoam)
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(doorObject.dialogueNode);
     }
   }

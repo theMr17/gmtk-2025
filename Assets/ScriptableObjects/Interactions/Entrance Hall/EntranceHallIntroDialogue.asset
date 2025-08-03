@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueLines:
   - text: Is this the entrance hall to the facility?
     textVariants: []
-    character: {fileID: 0}
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
       minDay: 0

@@ -6,6 +6,8 @@ public class DialogueManager : MonoBehaviour
 {
   public static DialogueManager Instance { get; private set; }
 
+  private GameObject interactionButtonsContainer;
+
   public event EventHandler<DialogueEventArgs> OnDialogueStart;
   public event EventHandler<DialogueEventArgs> OnDialogueChange;
   public event EventHandler OnDialogueEnd;
@@ -55,11 +57,16 @@ public class DialogueManager : MonoBehaviour
 
   private void Start()
   {
+    interactionButtonsContainer = GameObject.Find("InteractionButtons");
     GameManager.Instance.OnDialogueTriggered += GameManager_OnDialogueTriggered;
   }
 
   private void Update()
   {
+    if (interactionButtonsContainer == null)
+    {
+      interactionButtonsContainer = GameObject.Find("InteractionButtons");
+    }
     if (Input.GetMouseButtonDown(0) && _isDialogueActive && !_isShowingOptions)
     {
       ShowNextLine();
@@ -121,7 +128,6 @@ public class DialogueManager : MonoBehaviour
     if (currentLine.hideCharacterIfConditionMet && currentLine.hideCharacterCondition.IsMet(GameManager.Instance.gameState))
     {
       characterName = "???";
-      characterBust = null;
     }
 
     string dialogue = currentLine.text;
@@ -146,11 +152,17 @@ public class DialogueManager : MonoBehaviour
     if (isDialogueStart)
     {
       OnDialogueStart?.Invoke(this, eventArgs);
+      if (interactionButtonsContainer != null)
+        interactionButtonsContainer.SetActive(false); // Hide interaction buttons at start
     }
     else
     {
       OnDialogueChange?.Invoke(this, eventArgs);
+      if (interactionButtonsContainer != null)
+        interactionButtonsContainer.SetActive(false); // Hide interaction buttons at start
     }
+
+    SoundManager.PlaySound(SoundType.DialogueAdvance);
 
     if (currentLine.action != DialogueActionType.None)
     {
@@ -236,6 +248,8 @@ public class DialogueManager : MonoBehaviour
     Reset();
 
     OnDialogueEnd?.Invoke(this, EventArgs.Empty);
+    if (interactionButtonsContainer != null)
+      interactionButtonsContainer.SetActive(true); // Show interaction buttons again
 
     // Defer OnOptionsChosen until after full cleanup
     if (_pendingOptionChosenArgs != null)
@@ -254,6 +268,7 @@ public class DialogueManager : MonoBehaviour
     _currentNode = null;
     _dialogueQueue.Clear();
     _dialogueOptions.Clear();
+    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
   }
 
   private void TriggerDialogueAction(DialogueActionType action)
