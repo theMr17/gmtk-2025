@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88317aac2c94d9e418bddc2e1e1ebee8, type: 3}
+  m_Name: Log04
+  m_EditorClassIdentifier: 
+  logEntry: 09/07/2001
+  author: Dr. E. Ivanova
+  facility: D54
+  experimentSubject: 001
+  content: "Relocated due to facility fire hazard protocols. Subject 001 now demonstrates
+    semi-consistent anomalous loop recognition. Reports include seeing \u201Cvisions
+    of death.\u201D Controlled Death experiments have long been halted. Still unstable.
+    Subject complains of severe migraines.\r"
