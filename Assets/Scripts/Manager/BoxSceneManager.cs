@@ -107,7 +107,7 @@ public class BoxSceneManager : MonoBehaviour
             if (gs.LabAccident == 1)
             {
               GameManager.Instance.TriggerDialogue(dlExitDialogueNode);
-              // SceneLoader.Instance.LoadScene(SceneLoader.Scene.GameEndScene);
+              SceneLoader.Instance.LoadScene(SceneLoader.Scene.GameEndScene);
 
             }
             else
