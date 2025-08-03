@@ -1777,25 +1777,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68d4e911961aa2418685955c3505d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  labIntroDialogueNode: {fileID: 0}
+  labIntroDialogueNode: {fileID: 11400000, guid: ab0985e50ea13c846be40a8719058d4e, type: 2}
   exitAreaObject:
     button: {fileID: 1191754940}
     dialogueNode: {fileID: 0}
   syringeObject:
     button: {fileID: 943601169}
-    dialogueNode: {fileID: 0}
+    dialogueNode: {fileID: 11400000, guid: 91b5ccde69e6386409b7ab8417f8f370, type: 2}
   labCoatObject:
     button: {fileID: 1769035099}
-    dialogueNode: {fileID: 0}
+    dialogueNode: {fileID: 11400000, guid: ad67ef81174561c48aefe518792e3ac4, type: 2}
   whiteBoardObject:
     button: {fileID: 1735272544}
-    dialogueNode: {fileID: 0}
+    dialogueNode: {fileID: 11400000, guid: cd5540bbcd30e0042a45be02c240ccec, type: 2}
   specimenFridgeObject:
     button: {fileID: 1577634521}
-    dialogueNode: {fileID: 0}
+    dialogueNode: {fileID: 11400000, guid: 14f5b5a20942c8c49b510a8dc94d229e, type: 2}
   chemicalsObject:
     button: {fileID: 2012018125}
-    dialogueNode: {fileID: 0}
+    dialogueNode: {fileID: 11400000, guid: ce7182517eb661c4c847b7d0ecca24b1, type: 2}
   computerObject:
     button: {fileID: 714172502}
     dialogueNode: {fileID: 0}
