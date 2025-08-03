@@ -45,11 +45,13 @@ public class LabManager : MonoBehaviour
 
     private void HandleComputerInteraction()
     {
+        SoundManager.PlaySound(SoundType.ComputerOn);
         OnComputerOpened?.Invoke(this, EventArgs.Empty);
     }
 
     private void HandleExitAreaInteraction()
     {
+        SoundManager.PlaySound(SoundType.Door);
         SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
 
@@ -75,6 +77,7 @@ public class LabManager : MonoBehaviour
 
     private void HandleSpecimenFridgeInteraction()
     {
+        SoundManager.PlaySound(SoundType.DoorLocked);
         GameManager.Instance.TriggerDialogue(specimenFridgeObject.dialogueNode);
     }
 }
