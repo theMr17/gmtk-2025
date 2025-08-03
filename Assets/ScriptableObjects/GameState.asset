@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6bb6cfc357f974188839ba221a790a, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  Day: 2
+  Day: 1
   CalViewed: 0
   HallViewed: 0
   TvViewed: 0
   FreeRoam: 0
   CorViewed: 0
-  LabAccident: 1
+  LabAccident: 0
   StorViewed: 0
   OfficeViewed: 0
   LabViewed: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   LearnMeeting: 0
   SelOrg: 0
   SelMove: 0
-  EnteredBox: 5
+  EnteredBox: 0
   StoredBox: 0
   MeetingWitnessed: 0
-  OrderCargo: 1
+  OrderCargo: 0

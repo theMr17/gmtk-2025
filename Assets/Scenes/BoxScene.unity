@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272415fe8071bdb4c9cb880973b1c6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeMinutes: 689
+  startTimeMinutes: 1184
   realSecondsPerGameMinute: 1
 --- !u!4 &394489822
 Transform:
@@ -973,6 +973,7 @@ MonoBehaviour:
     button: {fileID: 1769035099}
     dialogueNode: {fileID: 11400000, guid: 2f9a6c50cac90c14b90fd58309e83803, type: 2}
   cargoArrivalDialogueNode: {fileID: 11400000, guid: c0415ae56356b2a40a3e977c59c04aea, type: 2}
+  timeUpDialogueNode: {fileID: 11400000, guid: 23a9820ff049de440856dc930ed9b3de, type: 2}
   dl001DialogueNode: {fileID: 11400000, guid: 4a7ddda6c6ee9ba4b9556218b9c7a4e9, type: 2}
   dlFoundDialogueNode: {fileID: 11400000, guid: a0c5acabfd1a37e48bbd732e8f7335da, type: 2}
   dlPassDialogueNode: {fileID: 11400000, guid: b62b96510cacf7141a2bb7560c240f8e, type: 2}

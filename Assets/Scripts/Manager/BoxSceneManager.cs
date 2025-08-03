@@ -9,17 +9,18 @@ public class BoxSceneManager : MonoBehaviour
   [Header("Scene References")]
   [SerializeField] private InteractableObject exitAreaObject;
   [SerializeField] private DialogueNodeSo cargoArrivalDialogueNode;
+  [SerializeField] private DialogueNodeSo timeUpDialogueNode;
 
   [Header("Dialogue Nodes")]
-  [SerializeField] private DialogueNodeSo dl001DialogueNode;       // DL001
-  [SerializeField] private DialogueNodeSo dlFoundDialogueNode;     // DLFound
-  [SerializeField] private DialogueNodeSo dlPassDialogueNode;      // DLPass
-  [SerializeField] private DialogueNodeSo dlNotRightDialogueNode;  // DLNotRight
-  [SerializeField] private DialogueNodeSo dlFailDialogueNode;      // DLFail
-  [SerializeField] private DialogueNodeSo dlRightDialogueNode;     // DLRight
-  [SerializeField] private DialogueNodeSo dlWrongDialogueNode;     // DLWrong
-  [SerializeField] private DialogueNodeSo dlWardenDialogueNode;    // DLWarden
-  [SerializeField] private DialogueNodeSo dlExitDialogueNode;      // DLExit
+  [SerializeField] private DialogueNodeSo dl001DialogueNode;
+  [SerializeField] private DialogueNodeSo dlFoundDialogueNode;
+  [SerializeField] private DialogueNodeSo dlPassDialogueNode;
+  [SerializeField] private DialogueNodeSo dlNotRightDialogueNode;
+  [SerializeField] private DialogueNodeSo dlFailDialogueNode;
+  [SerializeField] private DialogueNodeSo dlRightDialogueNode;
+  [SerializeField] private DialogueNodeSo dlWrongDialogueNode;
+  [SerializeField] private DialogueNodeSo dlWardenDialogueNode;
+  [SerializeField] private DialogueNodeSo dlExitDialogueNode;
 
   private void Awake()
   {
@@ -49,7 +50,7 @@ public class BoxSceneManager : MonoBehaviour
     {
       GameManager.Instance.TriggerDialogue(cargoArrivalDialogueNode);
     }
-    else if (e.Hour == 11 && e.Minute == 30 && gs.OrderCargo == 1)
+    if (e.Hour == 11 && e.Minute == 30 && gs.OrderCargo == 1)
     {
       GameManager.Instance.TriggerDialogue(dl001DialogueNode);
 
@@ -61,6 +62,17 @@ public class BoxSceneManager : MonoBehaviour
       };
 
       DialogueManager.Instance.OnDialogueEnd += onDialogueEnd;
+    }
+    if (e.Hour == 19 && e.Minute == 45)
+    {
+      GameManager.Instance.TriggerDialogue(timeUpDialogueNode);
+      EventHandler onTimeUpDialogueEnd = null;
+      onTimeUpDialogueEnd = (sender2, args) =>
+      {
+        DialogueManager.Instance.OnDialogueEnd -= onTimeUpDialogueEnd;
+        SceneLoader.Instance.LoadScene(SceneLoader.Scene.StorageScene);
+      };
+      DialogueManager.Instance.OnDialogueEnd += onTimeUpDialogueEnd;
     }
   }
 
