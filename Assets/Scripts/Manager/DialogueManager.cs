@@ -162,6 +162,8 @@ public class DialogueManager : MonoBehaviour
         interactionButtonsContainer.SetActive(false); // Hide interaction buttons at start
     }
 
+    SoundManager.PlaySound(SoundType.DialogueAdvance);
+
     if (currentLine.action != DialogueActionType.None)
     {
       TriggerDialogueAction(currentLine.action);

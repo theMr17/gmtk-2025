@@ -264,7 +264,7 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: "\u2026A beautiful golden wheat field, stretching out endlessly."
+  - text: "\u2026A beautiful sunflower field, stretching out endlessly."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -339,7 +339,9 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: No more guards. No more warden. No facility.
+  - text: 'No guards. No warden. No facility.
+
+'
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
@@ -364,7 +366,7 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: Just the real sun and the real air.
+  - text: Just the real sky and the real air and real flowers.
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
