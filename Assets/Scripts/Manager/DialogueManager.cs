@@ -266,6 +266,7 @@ public class DialogueManager : MonoBehaviour
     _currentNode = null;
     _dialogueQueue.Clear();
     _dialogueOptions.Clear();
+    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
   }
 
   private void TriggerDialogueAction(DialogueActionType action)

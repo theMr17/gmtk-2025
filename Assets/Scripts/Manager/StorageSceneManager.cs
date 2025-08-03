@@ -35,6 +35,8 @@ public class StorageSceneManager : MonoBehaviour
   [SerializeField] private DialogueNodeSo bxMoveHalfFalseDialogueNode;
   [SerializeField] private DialogueNodeSo bxMoveEmptyDialogueNode;
 
+  [SerializeField] private GameObject recordsUi;
+
   public event EventHandler<OnBoxSelectionStartedEventArgs> OnBoxSelectionStarted;
   public class OnBoxSelectionStartedEventArgs : EventArgs
   {
@@ -75,7 +77,7 @@ public class StorageSceneManager : MonoBehaviour
   {
     // Handle staff records interaction
     SoundManager.PlaySound(SoundType.PageTurn);
-    GameManager.Instance.TriggerDialogue(staffRecordsObject.dialogueNode);
+    recordsUi.SetActive(true);
   }
 
   private void HandleVentInteraction()
