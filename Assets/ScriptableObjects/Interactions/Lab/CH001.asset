@@ -114,7 +114,7 @@ MonoBehaviour:
       maxTvViewed: -1
       minLabAccidents: -1
       maxLabAccidents: -1
-    action: 0
+    action: 5
   options: []
   nextNode: {fileID: 0}
   showNodeCondition:

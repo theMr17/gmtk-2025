@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272415fe8071bdb4c9cb880973b1c6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeMinutes: 360
+  startTimeMinutes: 700
   realSecondsPerGameMinute: 1
 --- !u!4 &1603758640
 Transform:

@@ -73,8 +73,21 @@ public class LabManager : MonoBehaviour
     private void HandleChemicalInteraction()
     {
         GameManager.Instance.TriggerDialogue(chemicalsObject.dialogueNode);
-    }
 
+        EventHandler onChemicalDialogEnd = null;
+        onChemicalDialogEnd = (sender, e) =>
+        {
+            DialogueManager.Instance.OnDialogueEnd -= onChemicalDialogEnd;
+
+            // Check if the player chose the 'Mix the chemicals' option (assumed CH001 is triggered)
+            if (GameManager.Instance.gameState.LabAccident == 0)
+            {
+                GameManager.Instance.gameState.LabAccident = 1;
+            }
+        };
+
+        DialogueManager.Instance.OnDialogueEnd += onChemicalDialogEnd;
+    }
     private void HandleSpecimenFridgeInteraction()
     {
         SoundManager.PlaySound(SoundType.DoorLocked);
