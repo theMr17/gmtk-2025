@@ -34,6 +34,7 @@ public class S04RoomSceneManager : MonoBehaviour
 
   private void HandleCalendarInteraction()
   {
+    SoundManager.PlaySound(SoundType.PageTurn);
     GameManager.Instance.TriggerDialogue(calendarObject.dialogueNode);
 
     EventHandler onDialogueEndHandler = null;
@@ -70,10 +71,12 @@ public class S04RoomSceneManager : MonoBehaviour
   {
     if (GameManager.Instance.gameState.FreeRoam)
     {
+      SoundManager.PlaySound(SoundType.Door);
       SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
     }
     else
     {
+      SoundManager.PlaySound(SoundType.DoorLocked);
       GameManager.Instance.TriggerDialogue(doorObject.dialogueNode);
     }
   }
