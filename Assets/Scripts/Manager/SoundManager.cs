@@ -4,8 +4,20 @@ using UnityEngine.Audio;
 
 public enum SoundType
 {
-    DEMO,
-    TEST
+    BoxIn,
+    BoxTaken,
+    ComputerOn,
+    DialogueAdvance,
+    Door,
+    DoorLocked,
+    DoorOpenedColonel,
+    LadderMove,
+    PageTurn,
+    PasswordCorrect,
+    PasswordWrong,
+    Step,
+    Vent,
+
 }
 
 [RequireComponent(typeof(AudioSource))]
