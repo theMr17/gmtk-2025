@@ -25,6 +25,8 @@ public class S04RoomSceneManager : MonoBehaviour
     tvObject.button.onClick.AddListener(() => HandleTvInteraction());
     musicPlayerObject.button.onClick.AddListener(() => HandleMusicPlayerInteraction());
     booksObject.button.onClick.AddListener(() => HandleBooksInteraction());
+
+    SoundManager.PlaySound(SoundType.HalfMystery, true);
   }
 
   private void HandleBedInteraction()

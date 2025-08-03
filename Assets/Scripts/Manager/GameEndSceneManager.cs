@@ -14,6 +14,7 @@ public class GameEndSceneManager : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.StopSound();
         SoundManager.PlaySound(SoundType.BathedLight);
     }
 

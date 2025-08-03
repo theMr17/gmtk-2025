@@ -39,7 +39,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public static void PlaySound(SoundType sound, AudioSource source = null, float volume = 1, bool loop = false)
+    public static void PlaySound(SoundType sound, bool loop = false, AudioSource source = null, float volume = 1)
     {
         SoundList soundList = instance.SO.sounds[(int)sound];
         AudioClip[] clips = soundList.sounds;
@@ -57,6 +57,18 @@ public class SoundManager : MonoBehaviour
         {
             instance.audioSource.outputAudioMixerGroup = soundList.mixer;
             instance.audioSource.PlayOneShot(randomClip, volume * soundList.volume);
+        }
+    }
+
+    public static void StopSound(AudioSource source = null)
+    {
+        if (source)
+        {
+            source.Stop();
+        }
+        else if (instance != null && instance.audioSource != null)
+        {
+            instance.audioSource.Stop();
         }
     }
 }
