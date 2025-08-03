@@ -38,9 +38,9 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: Right. All inspections check out.
+  - text: "I\u2019ll be discovered if I stay here."
     textVariants: []
-    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
       minDay: 0
@@ -63,10 +63,9 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: "Great. Hurry, get the box we\u2019re taking. The quicker we get out of
-      this the better."
+  - text: Time to get out.
     textVariants: []
-    character: {fileID: 11400000, guid: 0852dd15ecc01004a9316917d049d652, type: 2}
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
       minDay: 0
@@ -89,9 +88,9 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: Right.
+  - text: "If only I could have known what boxes they\u2019re inspecting."
     textVariants: []
-    character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
+    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
       minDay: 0
