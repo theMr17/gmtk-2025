@@ -39,33 +39,7 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  options:
-  - option: Open Box
-    nextNode: {fileID: 11400000, guid: 186de4e8f8440a144b08f1eb00508f22, type: 2}
-    action: 0
-    showOptionCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-      minLabAccidents: -1
-      maxLabAccidents: -1
-  - option: Leave
-    nextNode: {fileID: 0}
-    action: 0
-    showOptionCondition:
-      minDay: -1
-      maxDay: -1
-      requiresFreeRoam: 0
-      negateFreeRoam: 0
-      requiredCalViewed: -1
-      minTvViewed: -1
-      maxTvViewed: -1
-      minLabAccidents: -1
-      maxLabAccidents: -1
+  options: []
   nextNode: {fileID: 0}
   showNodeCondition:
     minDay: -1
