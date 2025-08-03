@@ -21,7 +21,7 @@ MonoBehaviour:
     Control of Facility C falls to Warden Filch.\r\n\r\nNote: Cargo Order #165047
     (11:30 am. Extract Cargo Type 5. Inspect Cargo type 1, 2, 3, 4, 6, 9, 10, 12)
     has been cancelled due to increased risk of harmful external contact with Subject.
-    If needed, re-issue at Lab Terminal. Authorization Key: WMSLE (+2)\r\n"
+    If needed, re-issue at Lab Terminal. Authorization Key: WMSLE (+2)\r"
   date: 'Today at 00:04 '
   isRead: 1
   isPasswordProtected: 1

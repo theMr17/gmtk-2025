@@ -38,9 +38,8 @@ public class EmailUi : MonoBehaviour
 
         emailDate.text = emails[index].date;
 
-        emailContent.text = $"From: {emails[index].sender}"
-        + $"To: {emails[index].recipient}\n\n"
-        + $"RE: {emails[index].subject}\n\n"
+        emailContent.text = $"From: {emails[index].sender}\n\n"
+        + $"{emails[index].subject}\n\n"
         + $"{emails[index].content}";
     }
 

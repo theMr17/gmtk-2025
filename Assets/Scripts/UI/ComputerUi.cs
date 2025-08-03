@@ -44,6 +44,9 @@ public class ComputerUi : MonoBehaviour
     if (OfficeSceneManager.Instance != null)
       OfficeSceneManager.Instance.OnComputerOpened += HandleComputerOpened;
 
+    if (LabManager.Instance != null)
+      LabManager.Instance.OnComputerOpened += HandleComputerOpened;
+
     if (windowUi != null)
       windowUi.OnClose += HandleAppClosed;
 

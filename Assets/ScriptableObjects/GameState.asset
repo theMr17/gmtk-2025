@@ -30,4 +30,4 @@ MonoBehaviour:
   EnteredBox: 0
   StoredBox: 0
   MeetingWitnessed: 0
-  OrderCargo: 0
+  OrderCargo: 1

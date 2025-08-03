@@ -17,12 +17,10 @@ MonoBehaviour:
   recipient: 
   content: 'Dear Warden,
 
-    
 
-    Request #062 for Maintenance of Facility C
-    Storage Room Vent is approved. Maintenance Personnel are available at:
+    Request #062 for Maintenance of Facility C Storage
+    Room Vent is approved. Maintenance Personnel are available at:
 
-    
 
     03/02/03
     - 1520 Hours
@@ -34,18 +32,14 @@ MonoBehaviour:
     05/02/03
     - 0800 Hours
 
-    
 
     Please reply to confirm most convenient time.
 
-    
 
     Regards,
 
     Chronos
-    Facility Maintenance.
-
-'
+    Facility Maintenance.'
   date: Yesterday, at 13:30
   isRead: 1
   isPasswordProtected: 0
