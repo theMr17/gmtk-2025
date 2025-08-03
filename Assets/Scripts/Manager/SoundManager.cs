@@ -17,7 +17,10 @@ public enum SoundType
     PasswordWrong,
     Step,
     Vent,
-
+    AwkwardMeeting,
+    BathedLight,
+    Crypto,
+    HalfMystery
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -36,7 +39,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public static void PlaySound(SoundType sound, AudioSource source = null, float volume = 1)
+    public static void PlaySound(SoundType sound, AudioSource source = null, float volume = 1, bool loop = false)
     {
         SoundList soundList = instance.SO.sounds[(int)sound];
         AudioClip[] clips = soundList.sounds;
@@ -47,6 +50,7 @@ public class SoundManager : MonoBehaviour
             source.outputAudioMixerGroup = soundList.mixer;
             source.clip = randomClip;
             source.volume = volume * soundList.volume;
+            source.loop = loop;
             source.Play();
         }
         else

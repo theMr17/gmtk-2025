@@ -13,12 +13,88 @@ MonoBehaviour:
   m_Name: Sounds SO
   m_EditorClassIdentifier: 
   sounds:
-  - name: DEMO
+  - name: BoxIn
     volume: 1
     mixer: {fileID: 0}
     sounds:
-    - {fileID: 8300000, guid: 92d4b4ed834f9df49ad8907807282766, type: 3}
-  - name: TEST
+    - {fileID: 8300000, guid: 58d388db82ee9da4b88e2a619d046445, type: 3}
+  - name: BoxTaken
     volume: 1
     mixer: {fileID: 0}
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 6178d7bfcdb6067418c618983387ea7c, type: 3}
+  - name: ComputerOn
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 7ef89d66a65a9384090ed1dbbde2cca2, type: 3}
+  - name: DialogueAdvance
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 82d03d191cd62004fbbfb1b6aa3ca2a7, type: 3}
+  - name: Door
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 1e2ee3bd84b0766438e4774e3a41d8ca, type: 3}
+  - name: DoorLocked
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 0df7d7555e397c04bbf622f98e38d0af, type: 3}
+  - name: DoorOpenedColonel
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: df1b2f8c92307dd45ac916b6cc8d082c, type: 3}
+  - name: LadderMove
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 15e6f11dc308cfa49bd20d979775d97f, type: 3}
+  - name: PageTurn
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 0cb9e5094a6e35d428a1c2af1908288e, type: 3}
+  - name: PasswordCorrect
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 82dd7444260e14541a09096b2600db2c, type: 3}
+  - name: PasswordWrong
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: a20caae6ec8641c47a9f59596b313054, type: 3}
+  - name: Step
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 16bedb0d3e5440340917942c29b16e05, type: 3}
+  - name: Vent
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 215857d4fe456d040a19bb1b5dc02f8d, type: 3}
+  - name: AwkwardMeeting
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 54d5354c8abb2d54da0c2f16b5c30f7b, type: 3}
+  - name: BathedLight
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: d3127976156b8214ab097be65515ff9d, type: 3}
+  - name: Crypto
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: b5a3a1ff002d2aa40b86d91280e4295a, type: 3}
+  - name: HalfMystery
+    volume: 1
+    mixer: {fileID: 0}
+    sounds:
+    - {fileID: 8300000, guid: 1bf8de52dc3919a4fa5ed06d347196f7, type: 3}
