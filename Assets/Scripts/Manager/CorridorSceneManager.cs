@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class CorridorSceneManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class CorridorSceneManager : MonoBehaviour
   public static CorridorSceneManager Instance { get; private set; }
 
   [SerializeField] private DialogueNodeSo corridorIntroDialogueNode;
+
+  [SerializeField] private Image slipImage;
+  [SerializeField] private Image guardImage;
 
   [SerializeField] private InteractableObject slipObject;
   [SerializeField] private DialogueNodeSo slipDialogueNodeGuardPresent;
@@ -42,10 +46,18 @@ public class CorridorSceneManager : MonoBehaviour
     entranceHallDoorObject.button.onClick.AddListener(() => HandleEntranceHallDoorInteraction());
     s04RoomDoorObject.button.onClick.AddListener(() => HandleS04RoomDoorInteraction());
     storageDoorObject.button.onClick.AddListener(() => HandleStorageDoorInteraction());
+
+    // disable slip
+    slipImage.gameObject.SetActive(false);
+    DialogueManager.Instance.OnDialogueEnd += HideSlipImage;
+
+    guardImage.gameObject.SetActive(false);
   }
 
   private void Update()
   {
+    guardImage.gameObject.SetActive(IsGuardPresent());
+
     if (GameManager.Instance.gameState.CorViewed < 1)
     {
       GameManager.Instance.gameState.CorViewed++;
@@ -68,6 +80,7 @@ public class CorridorSceneManager : MonoBehaviour
     else
     {
       SoundManager.PlaySound(SoundType.PageTurn);
+      slipImage.gameObject.SetActive(true);
       GameManager.Instance.TriggerDialogue(slipDialogueNodeGuardAbsent);
     }
   }
@@ -159,5 +172,17 @@ public class CorridorSceneManager : MonoBehaviour
     int minute = DayTimeManager.Instance.Minute;
 
     return slipTimeRange.Includes(hour, minute);
+  }
+
+  private void OnDestroy()
+  {
+    if (DialogueManager.Instance != null)
+      DialogueManager.Instance.OnDialogueEnd -= HideSlipImage;
+  }
+
+  private void HideSlipImage(object sender, System.EventArgs e)
+  {
+    if (slipImage != null)
+      slipImage.gameObject.SetActive(false);
   }
 }
