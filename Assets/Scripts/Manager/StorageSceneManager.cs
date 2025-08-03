@@ -29,7 +29,6 @@ public class StorageSceneManager : MonoBehaviour
 
   [SerializeField] private DialogueNodeSo bxMoveDialogueNode;
   [SerializeField] private DialogueNodeSo bxMoveFullDialogueNode;
-  [SerializeField] private DialogueNodeSo bxMoveHalfDialogueNode;
   [SerializeField] private DialogueNodeSo bxMoveHalfFalseDialogueNode;
   [SerializeField] private DialogueNodeSo bxMoveEmptyDialogueNode;
 
@@ -39,6 +38,7 @@ public class StorageSceneManager : MonoBehaviour
   public class OnBoxSelectionStartedEventArgs : EventArgs
   {
     public List<int> excludedBoxIds;
+    public bool isBoxMoveSelection = false;
   }
 
   private void Awake()
@@ -92,6 +92,11 @@ public class StorageSceneManager : MonoBehaviour
     GameManager.Instance.gameState.LadderVent++;
   }
 
+  private void HandleExitAreaInteraction()
+  {
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
+  }
+
   private void HandleBoxesInteraction()
   {
     if (GameManager.Instance.gameState.EnteredBox != 0)
@@ -106,11 +111,6 @@ public class StorageSceneManager : MonoBehaviour
     {
       StartBoxMiniGame();
     }
-  }
-
-  private void HandleExitAreaInteraction()
-  {
-    SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
   }
 
   private void StartBoxMiniGame()
@@ -135,32 +135,16 @@ public class StorageSceneManager : MonoBehaviour
 
   private void HandleBX001Selection()
   {
-    EventHandler<DialogueManager.OptionsChosenEventArgs> onBoxSelectHandler = null;
-    onBoxSelectHandler = (sender, e) =>
+    // Compute boxes to exclude if needed (e.g., previously entered/stored)
+    var excludedBoxIds = new List<int>();
+
+    // Fire event to UI listeners to enable box selection
+    OnBoxSelectionStarted?.Invoke(this, new OnBoxSelectionStartedEventArgs
     {
-      DialogueManager.Instance.OnOptionsChosen -= onBoxSelectHandler;
-
-      GameManager.Instance.gameState.SelOrg = e.selectedOptionIndex + 1;
-
-      if (GameManager.Instance.gameState.SelOrg == 3 || GameManager.Instance.gameState.SelOrg == 6)
-      {
-        GameManager.Instance.TriggerDialogue(bxEmptyDialogueNode);
-        HandleBXEmpty();
-      }
-      else if (GameManager.Instance.gameState.SelOrg == 8 || GameManager.Instance.gameState.SelOrg == 11)
-      {
-        GameManager.Instance.TriggerDialogue(bxFullDialogueNode);
-        HandleBXFullOrHalf();
-      }
-      else
-      {
-        GameManager.Instance.TriggerDialogue(bxHalfDialogueNode);
-        HandleBXFullOrHalf();
-      }
-    };
-
-    DialogueManager.Instance.OnOptionsChosen += onBoxSelectHandler;
+      excludedBoxIds = excludedBoxIds
+    });
   }
+
 
   private void HandleBXEmpty()
   {
@@ -208,46 +192,15 @@ public class StorageSceneManager : MonoBehaviour
 
   private void HandleBXMoveSelection()
   {
-    EventHandler<DialogueManager.OptionsChosenEventArgs> onMoveBoxSelect = null;
-    onMoveBoxSelect = (sender, e) =>
+    // Exclude current box (SelOrg) from valid move targets
+    var excludedBoxIds = new List<int> { GameManager.Instance.gameState.SelOrg };
+
+    // Trigger UI to show move target selection
+    OnBoxSelectionStarted?.Invoke(this, new OnBoxSelectionStartedEventArgs
     {
-      DialogueManager.Instance.OnOptionsChosen -= onMoveBoxSelect;
-
-      GameManager.Instance.gameState.SelMove = e.selectedOptionIndex + 1;
-      if (GameManager.Instance.gameState.SelMove == GameManager.Instance.gameState.SelOrg)
-      {
-        // Invalid move, could loop back or handle error
-        GameManager.Instance.TriggerDialogue(bxLeaveDialogueNode);
-        ResetBoxVars();
-        return;
-      }
-
-      if (GameManager.Instance.gameState.SelMove == 8 || GameManager.Instance.gameState.SelMove == 11)
-      {
-        GameManager.Instance.TriggerDialogue(bxMoveFullDialogueNode);
-        ResetBoxVars();
-      }
-      else if (GameManager.Instance.gameState.SelMove == 3 || GameManager.Instance.gameState.SelMove == 6)
-      {
-        GameManager.Instance.TriggerDialogue(bxMoveEmptyDialogueNode);
-        HandleBXMoveSuccess();
-      }
-      else
-      {
-        if (GameManager.Instance.gameState.SelOrg == 8 || GameManager.Instance.gameState.SelOrg == 11)
-        {
-          GameManager.Instance.TriggerDialogue(bxMoveHalfFalseDialogueNode);
-          ResetBoxVars();
-        }
-        else
-        {
-          GameManager.Instance.TriggerDialogue(bxEmptyDialogueNode);
-          HandleBXMoveSuccess();
-        }
-      }
-    };
-
-    DialogueManager.Instance.OnOptionsChosen += onMoveBoxSelect;
+      excludedBoxIds = excludedBoxIds,
+      isBoxMoveSelection = true
+    });
   }
 
   private void HandleBXMoveSuccess()
@@ -287,4 +240,60 @@ public class StorageSceneManager : MonoBehaviour
     // Add logic to enter the box scene or trigger an animation/state
   }
 
+  public void OnBoxSelectedFromUI(int boxId)
+  {
+    GameManager.Instance.gameState.SelOrg = boxId;
+
+    if (boxId == 3 || boxId == 6)
+    {
+      GameManager.Instance.TriggerDialogue(bxEmptyDialogueNode);
+      HandleBXEmpty();
+    }
+    else if (boxId == 8 || boxId == 11)
+    {
+      GameManager.Instance.TriggerDialogue(bxFullDialogueNode);
+      HandleBXFullOrHalf();
+    }
+    else
+    {
+      GameManager.Instance.TriggerDialogue(bxHalfDialogueNode);
+      HandleBXFullOrHalf();
+    }
+  }
+
+  public void OnBoxMoveTargetSelectedFromUI(int boxId)
+  {
+    GameManager.Instance.gameState.SelMove = boxId;
+
+    if (boxId == GameManager.Instance.gameState.SelOrg)
+    {
+      GameManager.Instance.TriggerDialogue(bxLeaveDialogueNode);
+      ResetBoxVars();
+      return;
+    }
+
+    if (boxId == 8 || boxId == 11)
+    {
+      GameManager.Instance.TriggerDialogue(bxMoveFullDialogueNode);
+      ResetBoxVars();
+    }
+    else if (boxId == 3 || boxId == 6)
+    {
+      GameManager.Instance.TriggerDialogue(bxMoveEmptyDialogueNode);
+      HandleBXMoveSuccess();
+    }
+    else
+    {
+      if (GameManager.Instance.gameState.SelOrg == 8 || GameManager.Instance.gameState.SelOrg == 11)
+      {
+        GameManager.Instance.TriggerDialogue(bxMoveHalfFalseDialogueNode);
+        ResetBoxVars();
+      }
+      else
+      {
+        GameManager.Instance.TriggerDialogue(bxEmptyDialogueNode);
+        HandleBXMoveSuccess();
+      }
+    }
+  }
 }

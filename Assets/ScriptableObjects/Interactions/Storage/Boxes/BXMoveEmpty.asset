@@ -18,15 +18,15 @@ MonoBehaviour:
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
-      minDay: 0
-      maxDay: 0
+      minDay: -1
+      maxDay: -1
       requiresFreeRoam: 0
       negateFreeRoam: 0
-      requiredCalViewed: 0
-      minTvViewed: 0
-      maxTvViewed: 0
-      minLabAccidents: 0
-      maxLabAccidents: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
