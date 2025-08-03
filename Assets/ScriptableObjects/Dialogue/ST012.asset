@@ -25,6 +25,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -33,6 +35,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   - text: "Before we continue, I\u2019d like to ask you a question. Just a small
       little check-in we have to do."
@@ -47,6 +51,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -55,6 +61,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   - text: The warden takes a seat next to me and leans in.
     textVariants: []
@@ -68,6 +76,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -76,10 +86,12 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   - text: Just how much do you remember, Four?
     textVariants: []
-    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    character: {fileID: 11400000, guid: bcbb4996313d503448d677af63ff5f96, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
       minDay: -1
@@ -89,6 +101,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     showLineCondition:
       minDay: -1
       maxDay: -1
@@ -97,6 +111,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
     action: 0
   options:
   - option: "I remember I\u2019ve been through this day before."
@@ -110,6 +126,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
   - option: Nothing at all
     nextNode: {fileID: 11400000, guid: 36899f7291b278b4b81cc4a74de55c01, type: 2}
     action: 0
@@ -121,6 +139,8 @@ MonoBehaviour:
       requiredCalViewed: -1
       minTvViewed: -1
       maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
   nextNode: {fileID: 0}
   showNodeCondition:
     minDay: -1
@@ -130,3 +150,5 @@ MonoBehaviour:
     requiredCalViewed: -1
     minTvViewed: -1
     maxTvViewed: -1
+    minLabAccidents: -1
+    maxLabAccidents: -1

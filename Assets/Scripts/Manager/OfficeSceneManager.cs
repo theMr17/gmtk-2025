@@ -31,7 +31,7 @@ public class OfficeSceneManager : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.OfficeViewed < 1)
+    if (GameManager.Instance.gameState.OfficeViewed < 1)
     {
       GameManager.Instance.gameState.OfficeViewed++;
       GameManager.Instance.TriggerDialogue(officeIntroDialogueNode);

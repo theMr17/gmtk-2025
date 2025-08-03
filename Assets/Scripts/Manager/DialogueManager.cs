@@ -128,7 +128,6 @@ public class DialogueManager : MonoBehaviour
     if (currentLine.hideCharacterIfConditionMet && currentLine.hideCharacterCondition.IsMet(GameManager.Instance.gameState))
     {
       characterName = "???";
-      characterBust = null;
     }
 
     string dialogue = currentLine.text;

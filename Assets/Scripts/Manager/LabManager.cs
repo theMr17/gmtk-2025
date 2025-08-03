@@ -36,7 +36,7 @@ public class LabManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.LabViewed < 1)
+        if (GameManager.Instance.gameState.LabViewed < 1)
         {
             GameManager.Instance.gameState.LabViewed++;
             GameManager.Instance.TriggerDialogue(labIntroDialogueNode);

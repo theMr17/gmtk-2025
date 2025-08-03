@@ -42,7 +42,7 @@ public class EntranceHallSceneManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.HallViewed < 1)
+        if (GameManager.Instance.gameState.HallViewed < 1)
         {
             GameManager.Instance.gameState.HallViewed++;
             GameManager.Instance.TriggerDialogue(entranceHallIntroDialogueNode);

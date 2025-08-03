@@ -46,7 +46,7 @@ public class CorridorSceneManager : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.CorViewed < 1)
+    if (GameManager.Instance.gameState.CorViewed < 1)
     {
       GameManager.Instance.gameState.CorViewed++;
       GameManager.Instance.TriggerDialogue(corridorIntroDialogueNode);
