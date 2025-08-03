@@ -2233,6 +2233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d6d2b0087451240989fdc160741dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ladderOnVentStorageRoom: {fileID: 974755224059527470, guid: ba27efdd7b6c8b046838efda7d99bb12, type: 3}
+  canvas: {fileID: 468753184}
   storageIntroDialogueNode: {fileID: 11400000, guid: 3f8e6d89d91758640a3c45d9aae878bc, type: 2}
   staffRecordsObject:
     button: {fileID: 1191754940}

@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StorageSceneManager : MonoBehaviour
 {
   public static StorageSceneManager Instance { get; private set; }
 
-  [SerializeField] private DialogueNodeSo storageIntroDialogueNode;
+  [SerializeField] private Sprite ladderOnVentStorageRoom;
+  [SerializeField] private Canvas canvas;
 
+  [SerializeField] private DialogueNodeSo storageIntroDialogueNode;
 
   [SerializeField] private InteractableObject staffRecordsObject;
   [SerializeField] private InteractableObject ventObject;
@@ -55,10 +58,16 @@ public class StorageSceneManager : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.gameState.StorViewed < 1)
+    Debug.Log(GameManager.Instance.gameState.LadderVent);
+    if (GameManager.Instance.gameState.StorViewed < 1)
     {
       GameManager.Instance.gameState.StorViewed++;
       GameManager.Instance.TriggerDialogue(storageIntroDialogueNode);
+    }
+    if (GameManager.Instance.gameState.LadderVent > 0 &&
+    canvas.GetComponent<Image>().sprite != ladderOnVentStorageRoom)
+    {
+      canvas.GetComponent<Image>().sprite = ladderOnVentStorageRoom;
     }
   }
 
@@ -88,6 +97,7 @@ public class StorageSceneManager : MonoBehaviour
 
   private void HandleLadderInteraction()
   {
+    if (GameManager.Instance.gameState.LadderVent > 0) return;
     GameManager.Instance.TriggerDialogue(LadderObject.dialogueNode);
     SoundManager.PlaySound(SoundType.LadderMove);
     GameManager.Instance.gameState.LadderVent++;
