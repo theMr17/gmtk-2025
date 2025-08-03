@@ -272,6 +272,9 @@ public class DialogueManager : MonoBehaviour
       case DialogueActionType.SendToRoom:
         GameManager.Instance.SendPlayerToRoom();
         break;
+      case DialogueActionType.SendToCorridor:
+        GameManager.Instance.SendPlayerToCorridor();
+        break;
       default:
         break;
     }

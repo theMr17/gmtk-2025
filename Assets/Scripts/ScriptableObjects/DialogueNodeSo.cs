@@ -110,4 +110,5 @@ public enum DialogueActionType
   EnableFreeRoam,
   DisableFreeRoam,
   SendToRoom,
+  SendToCorridor,
 }

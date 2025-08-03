@@ -18,7 +18,7 @@ MonoBehaviour:
   TvViewed: 0
   FreeRoam: 0
   CorViewed: 0
-  LabAccident: 0
+  LabAccident: 1
   StorViewed: 0
   OfficeViewed: 0
   LabViewed: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   LearnMeeting: 0
   SelOrg: 0
   SelMove: 0
-  EnteredBox: 1
+  EnteredBox: 5
   StoredBox: 0
   MeetingWitnessed: 0
   OrderCargo: 1

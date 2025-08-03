@@ -80,4 +80,9 @@ public class GameManager : MonoBehaviour
     gameState.FreeRoam = false;
     SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
   }
+
+  public void SendPlayerToCorridor()
+  {
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene);
+  }
 }

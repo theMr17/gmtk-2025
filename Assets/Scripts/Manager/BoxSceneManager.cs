@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class BoxSceneManager : MonoBehaviour
@@ -68,12 +69,13 @@ public class BoxSceneManager : MonoBehaviour
   {
     var gs = GameManager.Instance.gameState;
 
-    if (gs.EnteredBox == 3 || gs.EnteredBox == 6)
+    if (gs.EnteredBox is 1 or 2 or 3 or 4 or 6 or 9 or 10 or 12)
     {
       GameManager.Instance.TriggerDialogue(dlFoundDialogueNode);
+      DayTimeManager.Instance.ResumeTime(11, 45); // Resume time to 11:45
       // Send to room handled by DialogueManager
     }
-    else if (gs.SelMove == 0 || gs.SelMove == 5 || gs.SelMove == 7)
+    else if (gs.SelMove is 0 or 5 or 7)
     {
       GameManager.Instance.TriggerDialogue(dlPassDialogueNode);
 
@@ -94,13 +96,14 @@ public class BoxSceneManager : MonoBehaviour
             if (gs.LabAccident == 1)
             {
               GameManager.Instance.TriggerDialogue(dlExitDialogueNode);
-              // SceneLoader.Instance.LoadScene(SceneLoader.Scene.GameEnd); // Successful escape
+              // SceneLoader.Instance.LoadScene(SceneLoader.Scene.GameEndScene);
+
             }
             else
             {
               GameManager.Instance.TriggerDialogue(dlWardenDialogueNode);
-              LockPlayer();
-              SceneLoader.Instance.LoadScene(SceneLoader.Scene.S04RoomScene);
+              DayTimeManager.Instance.ResumeTime(11, 45); // Resume time to 11:45
+              // should send to room automatically by DialogueManager
             }
           };
 
@@ -109,7 +112,8 @@ public class BoxSceneManager : MonoBehaviour
         else
         {
           GameManager.Instance.TriggerDialogue(dlWrongDialogueNode);
-          // SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene); // Failed but not caught
+          // should send to corridor automatically by DialogueManager
+          DayTimeManager.Instance.ResumeTime(11, 45); // Resume time to 11:45
         }
       };
 
@@ -118,17 +122,8 @@ public class BoxSceneManager : MonoBehaviour
     else
     {
       GameManager.Instance.TriggerDialogue(dlNotRightDialogueNode);
-
-      EventHandler onNotRightDialogueEnd = null;
-      onNotRightDialogueEnd = (sender, e) =>
-      {
-        DialogueManager.Instance.OnDialogueEnd -= onNotRightDialogueEnd;
-        GameManager.Instance.TriggerDialogue(dlFailDialogueNode);
-        DayTimeManager.Instance.ResumeTime(11, 45);
-        // SceneLoader.Instance.LoadScene(SceneLoader.Scene.CorridorScene); // Almost caught
-      };
-
-      DialogueManager.Instance.OnDialogueEnd += onNotRightDialogueEnd;
+      // should transition to fail dialogue automatically by DialogueManager
+      DayTimeManager.Instance.ResumeTime(11, 45); // Resume time to 11:45
     }
   }
 
@@ -151,10 +146,5 @@ public class BoxSceneManager : MonoBehaviour
     };
 
     DialogueManager.Instance.OnOptionsChosen += onMoveCompleteOptions;
-  }
-
-  private void LockPlayer()
-  {
-    GameManager.Instance.gameState.FreeRoam = false;
   }
 }

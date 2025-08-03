@@ -38,8 +38,8 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  - text: "Great. Hurry, get the box we\u2019re taking. The quicker we get out of
-      this, the better."
+  - text: "Great. Hurry, get the box we\u2019re taking. The quicker we\u2019re done
+      with this, the better."
     textVariants: []
     character: {fileID: 11400000, guid: 489e523b3b88fa1438cbf060aaa54cf9, type: 2}
     hideCharacterIfConditionMet: 0

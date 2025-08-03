@@ -976,7 +976,7 @@ MonoBehaviour:
   dl001DialogueNode: {fileID: 11400000, guid: 4a7ddda6c6ee9ba4b9556218b9c7a4e9, type: 2}
   dlFoundDialogueNode: {fileID: 11400000, guid: a0c5acabfd1a37e48bbd732e8f7335da, type: 2}
   dlPassDialogueNode: {fileID: 11400000, guid: b62b96510cacf7141a2bb7560c240f8e, type: 2}
-  dlNotRightDialogueNode: {fileID: 11400000, guid: 6df0bfbd2ece84248a39fba7e6978e80, type: 2}
+  dlNotRightDialogueNode: {fileID: 11400000, guid: b6e37a4513964824898d938b40830b09, type: 2}
   dlFailDialogueNode: {fileID: 11400000, guid: fed5626e7224cd5469b12be91a4e6796, type: 2}
   dlRightDialogueNode: {fileID: 11400000, guid: d6696e0a00ad0524daeb145a2b0e2b35, type: 2}
   dlWrongDialogueNode: {fileID: 11400000, guid: 6df0bfbd2ece84248a39fba7e6978e80, type: 2}
