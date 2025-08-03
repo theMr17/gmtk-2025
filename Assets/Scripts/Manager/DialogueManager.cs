@@ -153,12 +153,14 @@ public class DialogueManager : MonoBehaviour
     if (isDialogueStart)
     {
       OnDialogueStart?.Invoke(this, eventArgs);
-      interactionButtonsContainer.SetActive(false); // Hide interaction buttons at start
+      if (interactionButtonsContainer != null)
+        interactionButtonsContainer.SetActive(false); // Hide interaction buttons at start
     }
     else
     {
       OnDialogueChange?.Invoke(this, eventArgs);
-      interactionButtonsContainer.SetActive(false); // Hide interaction buttons at start
+      if (interactionButtonsContainer != null)
+        interactionButtonsContainer.SetActive(false); // Hide interaction buttons at start
     }
 
     if (currentLine.action != DialogueActionType.None)
@@ -245,7 +247,8 @@ public class DialogueManager : MonoBehaviour
     Reset();
 
     OnDialogueEnd?.Invoke(this, EventArgs.Empty);
-    interactionButtonsContainer.SetActive(true); // Show interaction buttons again
+    if (interactionButtonsContainer != null)
+      interactionButtonsContainer.SetActive(true); // Show interaction buttons again
 
     // Defer OnOptionsChosen until after full cleanup
     if (_pendingOptionChosenArgs != null)
