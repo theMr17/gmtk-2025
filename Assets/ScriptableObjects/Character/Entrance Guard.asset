@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Entrance Guard
   m_EditorClassIdentifier: 
   characterName: Entrance Guard
-  characterBust: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  characterBust: {fileID: -1075288922582346296, guid: fe848054aed36474fb5aeaf58d1080b7, type: 3}

@@ -11,11 +11,13 @@ public class SceneLoader : MonoBehaviour
 
   public enum Scene
   {
+    MainMenuScene,
     S04RoomScene,
     CorridorScene,
     EntranceHallScene,
     OfficeScene,
     StorageScene,
+    BoxScene,
     VentScene,
     LabScene,
   }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CargoDelivery
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "The delivery should be any minute now\u2026."
+  - text: "The pickup should be any minute now\u2026."
     textVariants: []
     character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
     hideCharacterIfConditionMet: 0

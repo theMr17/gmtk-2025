@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
   {
     public string[] options;
   }
+
   public event EventHandler<OptionsChosenEventArgs> OnOptionsChosen;
   public class OptionsChosenEventArgs : EventArgs
   {
@@ -35,6 +36,8 @@ public class DialogueManager : MonoBehaviour
   private List<DialogueOption> _dialogueOptions = new();
   private bool _isDialogueActive = false;
   private bool _isShowingOptions = false;
+
+  private OptionsChosenEventArgs _pendingOptionChosenArgs;
 
   private void Awake()
   {
@@ -131,6 +134,7 @@ public class DialogueManager : MonoBehaviour
       // This allows for a random selection of the default text or one of the variants
       dialogue = (randomIndex == currentLine.textVariants.Length) ? currentLine.text : currentLine.textVariants[randomIndex];
     }
+
     var eventArgs = new DialogueEventArgs
     {
       characterName = characterName,
@@ -187,17 +191,17 @@ public class DialogueManager : MonoBehaviour
       return;
     }
 
-    OnOptionsChosen?.Invoke(this, new OptionsChosenEventArgs
-    {
-      selectedOptionIndex = selectedOptionIndex
-    });
-
     if (_dialogueOptions[selectedOptionIndex].action != DialogueActionType.None)
     {
       TriggerDialogueAction(_dialogueOptions[selectedOptionIndex].action);
     }
 
     DialogueNodeSo nextNode = _dialogueOptions[selectedOptionIndex].nextNode;
+
+    _pendingOptionChosenArgs = new OptionsChosenEventArgs
+    {
+      selectedOptionIndex = selectedOptionIndex
+    };
 
     if (nextNode != null)
     {
@@ -232,6 +236,15 @@ public class DialogueManager : MonoBehaviour
     Reset();
 
     OnDialogueEnd?.Invoke(this, EventArgs.Empty);
+
+    // Defer OnOptionsChosen until after full cleanup
+    if (_pendingOptionChosenArgs != null)
+    {
+      var args = _pendingOptionChosenArgs;
+      _pendingOptionChosenArgs = null;
+
+      OnOptionsChosen?.Invoke(this, args);
+    }
   }
 
   private void Reset()
@@ -258,6 +271,9 @@ public class DialogueManager : MonoBehaviour
         break;
       case DialogueActionType.SendToRoom:
         GameManager.Instance.SendPlayerToRoom();
+        break;
+      case DialogueActionType.SendToCorridor:
+        GameManager.Instance.SendPlayerToCorridor();
         break;
       default:
         break;

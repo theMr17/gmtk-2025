@@ -92,7 +92,7 @@ MonoBehaviour:
     action: 0
   options:
   - option: Open Box
-    nextNode: {fileID: 11400000, guid: 186de4e8f8440a144b08f1eb00508f22, type: 2}
+    nextNode: {fileID: 0}
     action: 0
     showOptionCondition:
       minDay: -1

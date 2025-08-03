@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Guard
   m_EditorClassIdentifier: 
   characterName: Guard
-  characterBust: {fileID: 7175521830830924091, guid: 8dbb0d0399bc3914e9665dd999e1b3ad, type: 3}
+  characterBust: {fileID: 5437572038465830535, guid: fe848054aed36474fb5aeaf58d1080b7, type: 3}

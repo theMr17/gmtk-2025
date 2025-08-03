@@ -40,7 +40,7 @@ MonoBehaviour:
     action: 0
   - text: See you around.
     textVariants: []
-    character: {fileID: 11400000, guid: 59164244ca7e2f84d80e36cad229bad1, type: 2}
+    character: {fileID: 11400000, guid: df81b74b65f796746b0b7e3eb0187042, type: 2}
     hideCharacterIfConditionMet: 0
     hideCharacterCondition:
       minDay: 0
