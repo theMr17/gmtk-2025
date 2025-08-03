@@ -29,7 +29,12 @@ public class DayTimeUi : MonoBehaviour
   private void UpdateClockText(int hour, int minute)
   {
     if (_clockText != null)
-      _clockText.text = $"{hour:00}:{minute:00}";
+    {
+      int displayHour = hour % 12;
+      if (displayHour == 0) displayHour = 12;
+      string ampm = hour < 12 ? "AM" : "PM";
+      _clockText.text = $"{displayHour:00}:{minute:00} {ampm}";
+    }
   }
 
   private void UpdateDayText()
