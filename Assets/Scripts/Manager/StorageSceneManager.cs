@@ -234,8 +234,7 @@ public class StorageSceneManager : MonoBehaviour
 
   private void EnterBox()
   {
-    Debug.Log($"Entered Box: {GameManager.Instance.gameState.EnteredBox}, Moved Bag To: {GameManager.Instance.gameState.StoredBox}");
-    // Add logic to enter the box scene or trigger an animation/state
+    SceneLoader.Instance.LoadScene(SceneLoader.Scene.BoxScene);
   }
 
   public void OnBoxSelectedFromUI(int boxId)
