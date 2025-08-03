@@ -2779,9 +2779,8 @@ MonoBehaviour:
   bxLeaveDialogueNode: {fileID: 11400000, guid: 05aaf9ef84b58334185275103ce3ade6, type: 2}
   bxMoveDialogueNode: {fileID: 11400000, guid: c7f0ffb439a8e5d4992dbbd36afc9386, type: 2}
   bxMoveFullDialogueNode: {fileID: 11400000, guid: 4b89cb014c73af14e89ea29d472fd9e1, type: 2}
-  bxMoveHalfDialogueNode: {fileID: 11400000, guid: f272bdba1f1e1614487b461c120b10e1, type: 2}
   bxMoveHalfFalseDialogueNode: {fileID: 11400000, guid: f272bdba1f1e1614487b461c120b10e1, type: 2}
-  bxMoveEmptyDialogueNode: {fileID: 0}
+  bxMoveEmptyDialogueNode: {fileID: 11400000, guid: 2f5ce1a9ee7dd634d91647b9fbeb6b09, type: 2}
   boxSelectionPanel: {fileID: 0}
 --- !u!4 &2097615129
 Transform:

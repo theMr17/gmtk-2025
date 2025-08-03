@@ -38,7 +38,33 @@ MonoBehaviour:
       minLabAccidents: -1
       maxLabAccidents: -1
     action: 0
-  options: []
+  options:
+  - option: Enter Box
+    nextNode: {fileID: 0}
+    action: 0
+    showOptionCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
+  - option: Leave
+    nextNode: {fileID: 0}
+    action: 0
+    showOptionCondition:
+      minDay: -1
+      maxDay: -1
+      requiresFreeRoam: 0
+      negateFreeRoam: 0
+      requiredCalViewed: -1
+      minTvViewed: -1
+      maxTvViewed: -1
+      minLabAccidents: -1
+      maxLabAccidents: -1
   nextNode: {fileID: 0}
   showNodeCondition:
     minDay: -1

@@ -32,8 +32,6 @@ public class StorageSceneManager : MonoBehaviour
   [SerializeField] private DialogueNodeSo bxMoveHalfFalseDialogueNode;
   [SerializeField] private DialogueNodeSo bxMoveEmptyDialogueNode;
 
-  [SerializeField] private GameObject boxSelectionPanel;
-
   public event EventHandler<OnBoxSelectionStartedEventArgs> OnBoxSelectionStarted;
   public class OnBoxSelectionStartedEventArgs : EventArgs
   {
@@ -291,7 +289,7 @@ public class StorageSceneManager : MonoBehaviour
       }
       else
       {
-        GameManager.Instance.TriggerDialogue(bxEmptyDialogueNode);
+        GameManager.Instance.TriggerDialogue(bxMoveEmptyDialogueNode);
         HandleBXMoveSuccess();
       }
     }
