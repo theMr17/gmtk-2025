@@ -237,9 +237,9 @@ MonoBehaviour:
       maxTvViewed: -1
       minLabAccidents: -1
       maxLabAccidents: -1
-    action: 0
+    action: 4
   options: []
-  nextNode: {fileID: 11400000, guid: fed5626e7224cd5469b12be91a4e6796, type: 2}
+  nextNode: {fileID: 0}
   showNodeCondition:
     minDay: -1
     maxDay: -1

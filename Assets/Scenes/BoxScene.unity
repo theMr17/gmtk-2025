@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272415fe8071bdb4c9cb880973b1c6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeMinutes: 360
+  startTimeMinutes: 689
   realSecondsPerGameMinute: 1
 --- !u!4 &394489822
 Transform:
@@ -972,6 +972,16 @@ MonoBehaviour:
   exitAreaObject:
     button: {fileID: 1769035099}
     dialogueNode: {fileID: 11400000, guid: 2f9a6c50cac90c14b90fd58309e83803, type: 2}
+  cargoArrivalDialogueNode: {fileID: 11400000, guid: c0415ae56356b2a40a3e977c59c04aea, type: 2}
+  dl001DialogueNode: {fileID: 11400000, guid: 4a7ddda6c6ee9ba4b9556218b9c7a4e9, type: 2}
+  dlFoundDialogueNode: {fileID: 11400000, guid: a0c5acabfd1a37e48bbd732e8f7335da, type: 2}
+  dlPassDialogueNode: {fileID: 11400000, guid: b62b96510cacf7141a2bb7560c240f8e, type: 2}
+  dlNotRightDialogueNode: {fileID: 11400000, guid: 6df0bfbd2ece84248a39fba7e6978e80, type: 2}
+  dlFailDialogueNode: {fileID: 11400000, guid: fed5626e7224cd5469b12be91a4e6796, type: 2}
+  dlRightDialogueNode: {fileID: 11400000, guid: d6696e0a00ad0524daeb145a2b0e2b35, type: 2}
+  dlWrongDialogueNode: {fileID: 11400000, guid: 6df0bfbd2ece84248a39fba7e6978e80, type: 2}
+  dlWardenDialogueNode: {fileID: 11400000, guid: e34997584ad0afd41a6c1638a3e38ee1, type: 2}
+  dlExitDialogueNode: {fileID: 11400000, guid: 76d53a7b98326654f90bf35f9e057a39, type: 2}
 --- !u!1 &1769035097
 GameObject:
   m_ObjectHideFlags: 0
